@@ -34,8 +34,7 @@ gem 'devise', '~> 3.5.3'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry', '~> 0.10.3'
 end
 
 group :development do

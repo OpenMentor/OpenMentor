@@ -15,6 +15,11 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  # Use MailCatcher to catch emails (this is not included in the Gemfile because of potential conflicts)
+  # Instead, you'll need to gem install mailcatcher, and then invoke mailcatcher to run as a separate process
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
