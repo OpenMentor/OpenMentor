@@ -9,17 +9,19 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-  <% if mentor_signed_in? %>
-    <li>
-      <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
-    </li>
-  <% elsif !(current_page?('/mentors/sign_in') || current_page?('/mentors/sign_up')) %>
-    <li>
-      <%= link_to('Login', new_mentor_session_path)  %>
-    </li>
-  <% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div class="container">
+    <% if mentor_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
+      </li>
+    <% elsif !(current_page?('/mentors/sign_in') || current_page?('/mentors/sign_up')) %>
+      <li>
+        <%= link_to('Login', new_mentor_session_path)  %>
+      </li>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
 </body>
 </html>

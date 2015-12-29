@@ -1,13 +1,22 @@
 // Color
+$darkest-blue: #0F243D;
+$medium-blue: #0E3A6C;
+$button-blue: #3269a8;
+$text-white: #ffffff;
+$text-dark-blue: #122B48;
+$subtext-white: rgba(255, 255, 255, 0.5);
+$subtext-gray: #a3aaaf;
 
 // Typography
-
 body {
+  background: $darkest-blue;
+  background: -webkit-gradient(linear, left top, left bottom, from($darkest-blue), to($medium-blue)) fixed;
+  color: $text-white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-size: 1em;
   font-weight: 400;
-  line-height: 1.3em;
+  line-height: 1.4em;
 }
 
 h1 { font-weight: 500; }
@@ -20,10 +29,96 @@ h4 {
   text-transform: uppercase;
 }
 
+a {
+  color: $subtext-white;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+
+// Modules
+a.button, .button, input[type=submit] {
+  background: $button-blue;
+  border: none;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  color: $text-white;
+  font-weight: 500;
+  padding: 0.5em 2em 0.6em 2em;
+  text-align: center;
+}
+
 // Layout
 
 .container {
   margin: 0 auto;
   max-width: 1400px;
   width: 90%;
+}
+
+// Forms
+
+*:focus { outline: none; }
+
+.form-container {
+  margin: 4em auto 0 auto;
+  width: 420px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.3em;
+}
+
+.field { margin-bottom: 1em; }
+.actions { margin-bottom: 2em; }
+
+input {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  padding: 0.6em;
+  width: 100%;
+}
+
+input[type=checkbox] {
+  margin-right: 0.4em;
+  width: auto;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+textarea:focus {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.log-in,
+.sign-up {
+  input[type=text], input[type=password], input[type=email] {
+    background: rgba(255, 255, 255, 0.04);
+    color: $text-white;
+  }
+  .form-logo {
+    display: block;
+    margin: 0 auto 1.5em auto;
+    width: 100px;
+  }
+  .pipe {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0.3em;
+  }
+  .form-links {
+    text-align: center;
+  }
 }
