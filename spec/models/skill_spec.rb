@@ -12,7 +12,7 @@ describe Skill do
       expect(Skill.already_skill?(skill)).to be_truthy
     end
 
-    it "returns false if a sklil for the given name doesn't exist" do
+    it "returns false if a skill for the given name doesn't exist" do
       skill = Skill.new(name: "New Skill")
       expect(Skill.already_skill?(skill)).to be_falsey
     end
