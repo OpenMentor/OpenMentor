@@ -9,7 +9,7 @@ module Factories
     def self.build(options = {})
       ::SkillProposal.new(
         name: options.fetch(:name, SecureRandom.hex(10)),
-        proposed_by: options.fetch(:proposed_by) { Mentor.create! }
+        proposed_by: options.fetch(:proposed_by) { Mentor.create!.id }
       )
     end
   end
