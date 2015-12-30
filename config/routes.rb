@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :mentors
 
   get 'mentors' => 'mentors#index', as: :mentors
+  get 'mentor/:id'  => 'mentors#show', as: :mentor_show
 
   root 'mentors#index'
 
