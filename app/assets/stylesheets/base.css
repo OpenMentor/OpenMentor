@@ -69,8 +69,6 @@ a {
     margin: 0; }
   .header .logged-in .mentor-name {
     margin-right: 1em; }
-  .header .logged-in .button {
-    padding: 0.3em 1.5em 0.4em 1.5em; }
 
 a.button, .button, input[type=submit] {
   background: #3269a8;
@@ -86,6 +84,8 @@ a.button, .button, input[type=submit] {
     background: #3670b4;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease; }
+  a.button.small, .button.small, input[type=submit].small {
+    padding: 0.3em 1.5em 0.4em 1.5em; }
 
 .alert, .notice, .devise-alert {
   background: #3269a8;

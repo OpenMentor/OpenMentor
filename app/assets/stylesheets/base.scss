@@ -93,9 +93,6 @@ a {
     .mentor-name {
       margin-right: 1em;
     }
-    .button {
-      padding: 0.3em 1.5em 0.4em 1.5em;
-    }
   }
 }
 
@@ -114,6 +111,9 @@ a.button, .button, input[type=submit] {
     background: lighten($button-blue, 3%);
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
+  }
+  &.small {
+    padding: 0.3em 1.5em 0.4em 1.5em;
   }
 }
 
