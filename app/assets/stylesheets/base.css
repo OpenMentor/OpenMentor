@@ -87,7 +87,7 @@ a.button, .button, input[type=submit] {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease; }
 
-.alert, .notice {
+.alert, .notice, .devise-alert {
   background: #3269a8;
   color: #fff;
   margin: 0;
