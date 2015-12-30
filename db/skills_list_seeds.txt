@@ -1,0 +1,27 @@
+Ruby
+Ruby on Rails
+C
+C++
+D
+R
+JavaScript
+Node.js
+React
+CSS
+HTML
+SASS
+SCSS
+RSpec
+TDD
+BDD
+Cucumber
+Clojure
+Haskell
+Elm
+PureScript
+Java
+Tableau
+Apache Hadoop
+Apache Spark
+Apache Drill
+Machine Learning
