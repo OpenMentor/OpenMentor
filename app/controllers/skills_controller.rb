@@ -1,11 +1,11 @@
 class SkillsController < ApplicationController
+  before_action :validate_admin!, except: [:index]
+
   def new
     @skill = Skill.new
   end
 
   def create
-    skill = Skill.new(skill_params)
-
     if skill.save
       flash[:notice] = "#{skill.name} skill added successfully!"
       redirect_to root_path
@@ -20,6 +20,10 @@ class SkillsController < ApplicationController
   end
 
   private
+
+  def skill
+    @skill ||= Skill.new(skill_params)
+  end
 
   def skill_params
     params.require(:skill).permit(:name)
