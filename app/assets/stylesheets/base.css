@@ -62,10 +62,15 @@ a {
     color: #fff; }
     .header h1 a:hover {
       color: rgba(255, 255, 255, 0.8); }
-.header p {
-  display: inline-block;
-  float: right;
-  margin: 0; }
+.header .logged-in {
+  float: right; }
+  .header .logged-in p {
+    display: inline-block;
+    margin: 0; }
+  .header .logged-in .mentor-name {
+    margin-right: 1em; }
+  .header .logged-in .button {
+    padding: 0.3em 1.5em 0.4em 1.5em; }
 
 a.button, .button, input[type=submit] {
   background: #3269a8;
