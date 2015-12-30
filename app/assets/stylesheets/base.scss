@@ -29,10 +29,6 @@ $subtext-gray: #a3aaaf;
 // Typography
 body {
   background: $darkest-blue;
-  background-image: url("/assets/stars.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right top, left top;
   color: $text-white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
@@ -40,6 +36,13 @@ body {
   font-weight: 400;
   line-height: 1.4em;
   height: 100%;
+}
+
+.wrapper {
+  background: $darkest-blue;
+  background-image: url("/assets/stars.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
 
 h1 {
@@ -262,7 +265,6 @@ textarea:focus {
     }
   }
 
-  .mentor-photo { width: 95px; }
   h2 {
     margin: 1em 0 0.2em 0;
     a {
@@ -283,6 +285,28 @@ textarea:focus {
     letter-spacing: 1px;
   }
 }
+
+.mentor-photo { width: 95px; }
+
+// Mentor Profile
+
+.mentor-profile {
+  .container {
+    background: #fff;
+    border-radius: 4px;
+    padding: 2em;
+  }
+  .mentor-photo {
+    float: left;
+    margin-right: 2em;
+  }
+  h1 {
+    color: $darkest-blue;
+    display: inline-block;
+    float: left;
+  }
+}
+
 
 // Footer
 

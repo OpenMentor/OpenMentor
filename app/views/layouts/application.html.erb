@@ -9,12 +9,13 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-  <% %w(notice alert).each do |flash_message| %>
-    <% if flash[flash_message] %>
-      <p class="<%= flash_message %>"><%= flash[flash_message] %></p>
+  <div class="wrapper">
+    <% %w(notice alert).each do |flash_message| %>
+      <% if flash[flash_message] %>
+        <p class="<%= flash_message %>"><%= flash[flash_message] %></p>
+      <% end %>
     <% end %>
-  <% end %>
-
-  <%= yield %>
+    <%= yield %>
+  </div>
 </body>
 </html>

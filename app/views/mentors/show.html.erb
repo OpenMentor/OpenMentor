@@ -2,7 +2,7 @@
 
 <div class="mentor-profile">
   <div class="container">
+    <div><%= image_tag @mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
     <h1><%= @mentor.name %></h1>
-    <%= image_tag @mentor.profile_picture.url(:medium) %>
   </div>
 </div>
