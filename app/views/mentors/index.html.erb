@@ -6,8 +6,10 @@
   <ul class="mentor-list">
     <% @mentors.each do |mentor| %>
       <li class="mentor-card">
-        <a href="/"><img class="mentor-photo" src="/assets/default.png" src="Open Mentor Logo" /></a>
-        <h2><a href=""><%= mentor.name %></a></h2>
+        <%= link_to mentor_show_path(mentor) do %>
+          <img class="mentor-photo" src="/assets/default.png" src="Open Mentor Logo" />
+          <h2><%= mentor.name %></h2>
+        <% end %>
         <p class="mentor-skills">JavaScript, Ruby on Rails</p>
         <%= link_to "View Profile", mentor_show_path(mentor), class: "mentor-profile-link" %>
       </li>
