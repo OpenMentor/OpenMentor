@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'mentors' => 'mentors#index', as: :mentors
   get 'mentor/:id'  => 'mentors#show', as: :mentor_show
 
+  get 'profiles/edit' => 'mentors#edit', as: :mentor_edit
+  patch 'profiles/update' => 'mentors#update', as: :mentor_update
+
   root 'mentors#index'
 
   resources :skills
