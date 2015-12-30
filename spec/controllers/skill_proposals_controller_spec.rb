@@ -36,7 +36,7 @@ describe SkillProposalsController do
     end
 
     it "sets a flash error" do
-      expect(flash[:error].messages[:name]).to_not be_nil
+      expect(flash[:alert].messages[:name]).to_not be_nil
     end
 
     it "redirects to new" do
@@ -55,7 +55,7 @@ describe SkillProposalsController do
     end
 
     it "sets a flash error" do
-      expect(flash[:error].messages[:name]).to_not be_nil
+      expect(flash[:alert].messages[:name]).to_not be_nil
     end
 
     it "redirects to new" do
