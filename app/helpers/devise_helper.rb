@@ -5,7 +5,7 @@ module DeviseHelper
     resource.
       errors.
       full_messages.
-      map { |msg| content_tag(:p, msg, class: "alert") }.
+      map { |msg| content_tag(:p, msg, class: "devise-alert") }.
       join.
       html_safe
   end
