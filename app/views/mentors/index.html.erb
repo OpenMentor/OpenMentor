@@ -9,7 +9,7 @@
         <a href="/"><img class="mentor-photo" src="/assets/default.png" src="Open Mentor Logo" /></a>
         <h2><a href=""><%= mentor.name %></a></h2>
         <p class="mentor-skills">JavaScript, Ruby on Rails</p>
-        <a href="" class="mentor-profile-link">View Profile</a>
+        <%= link_to "View Profile", mentor_show_path(mentor), class: "mentor-profile-link" %>
       </li>
     <% end %>
   </ul>
