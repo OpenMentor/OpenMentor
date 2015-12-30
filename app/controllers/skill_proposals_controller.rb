@@ -6,13 +6,13 @@ class SkillProposalsController < ApplicationController
 
   def create
     if name_already_exists?
-      flash[:error] = custom_error skill_proposal, { name: invalid_proposal_message }
+      flash[:alert] = custom_error skill_proposal, { name: invalid_proposal_message }
       redirect_to action: "new"
     elsif skill_proposal.save
       flash[:notice] = success_proposal_message
       redirect_to root_path
     else
-      flash[:error] = skill_proposal.errors
+      flash[:alert] = skill_proposal.errors
       redirect_to action: "new"
     end
   end
