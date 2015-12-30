@@ -29,11 +29,10 @@ $subtext-gray: #a3aaaf;
 // Typography
 body {
   background: $darkest-blue;
-  background-image: url("/assets/stars.png"),
-                    linear-gradient(to bottom, $darkest-blue, $medium-blue);
+  background-image: url("/assets/stars.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right top, left top;
   color: $text-white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;

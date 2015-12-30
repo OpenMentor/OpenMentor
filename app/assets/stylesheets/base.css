@@ -15,10 +15,10 @@
 
 body {
   background: #10253e;
-  background-image: url("/assets/stars.png"), linear-gradient(to bottom, #10253e, #0f3e76);
+  background-image: url("/assets/stars.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right top, left top;
   color: white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
