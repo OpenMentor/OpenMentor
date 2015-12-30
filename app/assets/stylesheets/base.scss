@@ -70,6 +70,12 @@ a {
     font-size: 1.2em;
     font-weight: 400;
     margin: 0;
+    a {
+      color: #fff;
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
   }
 }
 
@@ -226,7 +232,12 @@ textarea:focus {
   }
 
   .mentor-photo { width: 95px; }
-  h2 { margin: 1em 0 0.2em 0; }
+  h2 {
+    margin: 1em 0 0.2em 0;
+    a {
+      color: $darkest-blue;
+    }
+  }
   .mentor-skills {
     color: $subtext-gray;
     margin: 0.5em 0 0 0;
@@ -239,10 +250,5 @@ textarea:focus {
     margin: 1.5em 0 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    &:hover {
-      color: darken($button-blue, 10%);
-      -webkit-transition: all 0.1s ease;
-      transition: all 0.1s ease;
-    }
   }
 }

@@ -51,6 +51,10 @@ a {
     font-size: 1.2em;
     font-weight: 400;
     margin: 0; }
+    .header h1 a {
+      color: #fff; }
+      .header h1 a:hover {
+        color: rgba(255, 255, 255, 0.8); }
 
 a.button, .button, input[type=submit] {
   background: #3269a8;
@@ -182,6 +186,8 @@ textarea:focus {
     width: 95px; }
   .mentor-card h2 {
     margin: 1em 0 0.2em 0; }
+    .mentor-card h2 a {
+      color: #0f243d; }
   .mentor-card .mentor-skills {
     color: #a3aaaf;
     margin: 0.5em 0 0 0; }
@@ -193,7 +199,3 @@ textarea:focus {
     margin: 1.5em 0 0 0;
     text-transform: uppercase;
     letter-spacing: 1px; }
-    .mentor-card .mentor-profile-link:hover {
-      color: #265081;
-      -webkit-transition: all 0.1s ease;
-      transition: all 0.1s ease; }
