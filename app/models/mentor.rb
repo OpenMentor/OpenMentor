@@ -10,6 +10,9 @@ class Mentor < ActiveRecord::Base
          :confirmable,
          :lockable
 
+  validates :email, presence: true, uniqueness: true
+  validates :name, presence: true
+
   has_many :skill_proposals, foreign_key: 'proposed_by'
   has_many :reviewed_skill_proposals, class_name: 'SkillProposal', foreign_key: 'reviewed_by'
 
