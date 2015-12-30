@@ -266,3 +266,44 @@ textarea:focus {
     letter-spacing: 1px;
   }
 }
+
+// Footer
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  .container {
+    padding: 2em 0;
+    position: relative;
+  }
+  h1 {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    a {
+      color: $subtext-white;
+      &:hover { color: rgba(255, 255, 255, 0.8); }
+    }
+  }
+  p {
+    margin: 0.5em 0 0 0;
+    a {
+      color: rgba(255, 255, 255, 0.8);
+      &:hover { color: rgba(255, 255, 255, 1); }
+    }
+  }
+}
+
+.footer-logo {
+  display: block;
+  opacity: 0.4;
+  position: absolute;
+  right: 0;
+  top: 1.8em;
+  width: 60px;
+  &:hover {
+    opacity: 1;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}

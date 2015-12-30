@@ -1,0 +1,9 @@
+<div class="footer">
+  <div class="container">
+    <h1><a href="/">Open Mentor</a></h1>
+    <% if mentor_signed_in? %>
+      <p><%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %></p>
+    <% end %>
+    <a href="/"><img class="footer-logo" src="/assets/om-white-circle.png" src="Open Mentor Logo" /></a>
+  </div>
+</div>

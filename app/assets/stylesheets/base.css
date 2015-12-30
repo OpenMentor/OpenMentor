@@ -212,3 +212,36 @@ textarea:focus {
     margin: 1.5em 0 0 0;
     text-transform: uppercase;
     letter-spacing: 1px; }
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .footer .container {
+    padding: 2em 0;
+    position: relative; }
+  .footer h1 {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0; }
+    .footer h1 a {
+      color: rgba(255, 255, 255, 0.5); }
+      .footer h1 a:hover {
+        color: rgba(255, 255, 255, 0.8); }
+  .footer p {
+    margin: 0.5em 0 0 0; }
+    .footer p a {
+      color: rgba(255, 255, 255, 0.8); }
+      .footer p a:hover {
+        color: white; }
+
+.footer-logo {
+  display: block;
+  opacity: 0.4;
+  position: absolute;
+  right: 0;
+  top: 1.8em;
+  width: 60px; }
+  .footer-logo:hover {
+    opacity: 1;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease; }
