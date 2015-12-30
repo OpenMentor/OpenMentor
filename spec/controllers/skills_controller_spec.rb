@@ -67,7 +67,7 @@ describe SkillsController do
         @name = "Test"
         Factories::Skill.create!(name: @name)
 
-        @result = post :create, skill: { name: @name }
+        @result = post :create, skill: { name: @name.downcase }
       end
     end
 

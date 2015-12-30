@@ -6,8 +6,11 @@ class SkillsController < ApplicationController
   end
 
   def create
-    if skill.save
-      flash[:notice] = "#{skill.name} skill added successfully!"
+    if name_already_exists?
+      flash[:error] = custom_error skill, { name: invalid_skill_message }
+      redirect_to action: "new"
+    elsif skill.save
+      flash[:notice] = success_skill_message
       redirect_to root_path
     else
       flash[:error] = skill.errors
@@ -20,6 +23,18 @@ class SkillsController < ApplicationController
   end
 
   private
+
+  def name_already_exists?
+    Skill.already_skill?(skill)
+  end
+
+  def invalid_skill_message
+    "The #{skill.name} skill already exists!"
+  end
+
+  def success_skill_message
+    "#{skill.name} added successfully!"
+  end
 
   def skill
     @skill ||= Skill.new(skill_params)
