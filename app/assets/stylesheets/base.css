@@ -1,4 +1,4 @@
-* {
+*, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -7,6 +7,11 @@
   margin: 0 auto;
   max-width: 1400px;
   width: 90%; }
+  .container:before, .container:after {
+    content: " ";
+    display: table; }
+  .container:after {
+    clear: both; }
 
 body {
   background: #0f243d;
@@ -45,24 +50,22 @@ a {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease; }
 
-.header {
-  overflow: hidden; }
-  .header .container {
-    padding: 2em 0; }
-  .header h1 {
-    display: inline-block;
-    float: left;
-    font-size: 1.2em;
-    font-weight: 400;
-    margin: 0; }
-    .header h1 a {
-      color: #fff; }
-      .header h1 a:hover {
-        color: rgba(255, 255, 255, 0.8); }
-  .header p {
-    display: inline-block;
-    float: right;
-    margin: 0; }
+.header .container {
+  padding: 2em 0; }
+.header h1 {
+  display: inline-block;
+  float: left;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 0; }
+  .header h1 a {
+    color: #fff; }
+    .header h1 a:hover {
+      color: rgba(255, 255, 255, 0.8); }
+.header p {
+  display: inline-block;
+  float: right;
+  margin: 0; }
 
 a.button, .button, input[type=submit] {
   background: #3269a8;

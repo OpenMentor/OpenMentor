@@ -9,7 +9,7 @@ $subtext-gray: #a3aaaf;
 
 // Layout
 
-* {
+*, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -19,6 +19,11 @@ $subtext-gray: #a3aaaf;
   margin: 0 auto;
   max-width: 1400px;
   width: 90%;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after { clear: both; }
 }
 
 // Typography
@@ -65,7 +70,6 @@ a {
 
 // Header
 .header {
-  overflow: hidden;
   .container { padding: 2em 0; }
   h1 {
     display: inline-block;
