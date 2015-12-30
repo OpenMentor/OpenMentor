@@ -46,8 +46,12 @@ a {
     transition: all 0.1s ease; }
 
 .header {
-  padding: 2em 0; }
+  overflow: hidden; }
+  .header .container {
+    padding: 2em 0; }
   .header h1 {
+    display: inline-block;
+    float: left;
     font-size: 1.2em;
     font-weight: 400;
     margin: 0; }
@@ -55,6 +59,10 @@ a {
       color: #fff; }
       .header h1 a:hover {
         color: rgba(255, 255, 255, 0.8); }
+  .header p {
+    display: inline-block;
+    float: right;
+    margin: 0; }
 
 a.button, .button, input[type=submit] {
   background: #3269a8;
@@ -156,31 +164,33 @@ textarea:focus {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   float: left;
-  margin: 0 0 1em 2%;
+  margin: 0 0 2em 3%;
   padding: 2em 1em 1.5em 1em;
   text-align: center;
-  width: 18.4%; }
-  .mentor-card:nth-of-type(5n+1) {
+  width: 22.75%; }
+  .mentor-card:nth-of-type(4n+1) {
     margin-left: 0; }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     .mentor-card {
-      width: 32%; }
-      .mentor-card:nth-of-type(5n+1) {
-        margin-left: 2%; }
+      margin: 0 0 1.5em 3%;
+      width: 31.333%; }
+      .mentor-card:nth-of-type(4n+1) {
+        margin-left: 3%; }
       .mentor-card:nth-of-type(3n+1) {
         margin-left: 0; } }
-  @media (max-width: 640px) {
+  @media (max-width: 750px) {
     .mentor-card {
-      width: 48%; }
-      .mentor-card:nth-of-type(5n+1), .mentor-card:nth-of-type(3n+1) {
-        margin-left: 2%; }
+      margin: 0 0 1em 3%;
+      width: 48.5%; }
+      .mentor-card:nth-of-type(4n+1), .mentor-card:nth-of-type(3n+1) {
+        margin-left: 3%; }
       .mentor-card:nth-of-type(2n+1) {
         margin-left: 0; } }
   @media (max-width: 480px) {
     .mentor-card {
       width: 100%;
       margin: 0 0 1em 0; }
-      .mentor-card:nth-of-type(5n+1), .mentor-card:nth-of-type(3n+1) {
+      .mentor-card:nth-of-type(4n+1), .mentor-card:nth-of-type(3n+1) {
         margin-left: 0; } }
   .mentor-card .mentor-photo {
     width: 95px; }
