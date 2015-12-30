@@ -1,6 +1,6 @@
 // Color
-$darkest-blue: #0F243D;
-$medium-blue: #0E3A6C;
+$darkest-blue: #10253E;
+$medium-blue: #0F3E76;
 $button-blue: #3269a8;
 $text-white: #ffffff;
 $text-dark-blue: #122B48;
@@ -29,13 +29,18 @@ $subtext-gray: #a3aaaf;
 // Typography
 body {
   background: $darkest-blue;
-  background: -webkit-gradient(linear, left top, left bottom, from($darkest-blue), to($medium-blue)) fixed;
+  background-image: url("/assets/stars.png"),
+                    linear-gradient(to bottom, $darkest-blue, $medium-blue);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: $text-white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.4em;
+  height: 100%;
 }
 
 h1 {

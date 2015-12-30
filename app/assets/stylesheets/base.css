@@ -14,14 +14,18 @@
     clear: both; }
 
 body {
-  background: #0f243d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0f243d), to(#0e3a6c)) fixed;
+  background: #10253e;
+  background-image: url("/assets/stars.png"), linear-gradient(to bottom, #10253e, #0f3e76);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
   font-size: 1em;
   font-weight: 400;
-  line-height: 1.4em; }
+  line-height: 1.4em;
+  height: 100%; }
 
 h1 {
   font-size: 2.2em;
@@ -29,7 +33,7 @@ h1 {
   line-height: 1.2em; }
 
 h2 {
-  color: #0f243d;
+  color: #10253e;
   font-size: 1.3em;
   font-weight: 700;
   margin: 1em 0; }
@@ -119,7 +123,7 @@ label {
   display: inline; }
 
 input {
-  color: #0f243d;
+  color: #10253e;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -208,7 +212,7 @@ textarea:focus {
   .mentor-card h2 {
     margin: 1em 0 0.2em 0; }
     .mentor-card h2 a {
-      color: #0f243d; }
+      color: #10253e; }
   .mentor-card .mentor-skills {
     color: #a3aaaf;
     margin: 0.5em 0 0 0; }
