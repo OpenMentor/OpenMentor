@@ -9,19 +9,12 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-  <div class="container">
-    <% if mentor_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
-      </li>
-    <% elsif !(current_page?('/mentors/sign_in') || current_page?('/mentors/sign_up')) %>
-      <li>
-        <%= link_to('Login', new_mentor_session_path)  %>
-      </li>
+  <% %w(notice alert).each do |flash_message| %>
+    <% if flash[flash_message] %>
+      <p class="<%= flash_message %>"><%= flash[flash_message] %></p>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
+  <% end %>
+
+  <%= yield %>
 </body>
 </html>
