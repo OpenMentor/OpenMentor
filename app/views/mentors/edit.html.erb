@@ -1,0 +1,6 @@
+<%= form_for @mentor, url: mentor_update_path, html: { multipart: true } do |f| %>
+	<%= f.label :name %>
+  <%= f.text_field :name, value: @mentor.name %>
+  <%= f.file_field :profile_picture %>
+  <%= f.submit "Update" %>
+<% end %>

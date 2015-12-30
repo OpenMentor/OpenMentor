@@ -33,6 +33,8 @@ gem 'devise', '~> 3.5.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'paperclip', '~> 4.3'
+
 group :development, :test do
   gem 'pry', '~> 0.10.3'
 end
