@@ -50,6 +50,11 @@ a.button, .button, input[type=submit] {
   font-weight: 500;
   padding: 0.5em 2em 0.6em 2em;
   text-align: center;
+  &:hover {
+    background: lighten($button-blue, 3%);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
 }
 
 // Layout
