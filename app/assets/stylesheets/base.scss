@@ -7,6 +7,20 @@ $text-dark-blue: #122B48;
 $subtext-white: rgba(255, 255, 255, 0.5);
 $subtext-gray: #a3aaaf;
 
+// Layout
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 90%;
+}
+
 // Typography
 body {
   background: $darkest-blue;
@@ -20,8 +34,18 @@ body {
 }
 
 h1 { font-weight: 500; }
-h2 { font-weight: 700; }
-h3 { font-weight: 500; }
+h2 {
+  color: $darkest-blue;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 1em 0;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
 h4 {
   font-size: 0.9em;
   font-weight: 700;
@@ -36,6 +60,16 @@ a {
     color: #fff;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
+  }
+}
+
+// Header
+.header {
+  padding: 2em 0;
+  h1 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0;
   }
 }
 
@@ -57,12 +91,14 @@ a.button, .button, input[type=submit] {
   }
 }
 
-// Layout
+// Alerts
 
-.container {
-  margin: 0 auto;
-  max-width: 1400px;
-  width: 90%;
+.alert, .notice {
+  background: $button-blue;
+  color: #fff;
+  margin: 0;
+  padding: 1em 2em;
+  text-align: center;
 }
 
 // Forms
@@ -71,7 +107,10 @@ a.button, .button, input[type=submit] {
 
 .form-container {
   margin: 4em auto 0.5em auto;
-  width: 420px;
+  max-width: 420px;
+  h2 {
+    text-align: center;
+  }
 }
 
 label {
@@ -112,32 +151,98 @@ textarea:focus {
   transition: all 0.1s ease;
 }
 
+.form-logo {
+  display: block;
+  margin: 0 auto 1.5em auto;
+  width: 100px;
+}
+
+.form-links {
+  text-align: center;
+}
+
+.pipe {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 0.3em;
+}
+
+// Form Overrides
 .log-in,
-.sign-up {
+.sign-up,
+.confirm {
   input[type=text], input[type=password], input[type=email] {
     background: rgba(255, 255, 255, 0.04);
     color: $text-white;
   }
-  .form-logo {
-    display: block;
-    margin: 0 auto 1.5em auto;
-    width: 100px;
-  }
-  .pipe {
-    color: rgba(255, 255, 255, 0.3);
-    margin: 0 0.3em;
-  }
-  .form-links {
-    text-align: center;
-  }
 }
 
-// Alerts
+// Mentors
 
-.alert, .notice {
-  background: $button-blue;
-  color: #fff;
+.mentor-list {
+  list-style: none;
   margin: 0;
-  padding: 1em 2em;
+  padding: 0;
+}
+
+.mentor-card {
+  background: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  margin: 0 0 1em 2%;
+  padding: 2em 1em 1.5em 1em;
   text-align: center;
+  width: 18.4%;
+  &:nth-of-type(5n+1) {
+    margin-left: 0;
+  }
+  @media (max-width: 900px) {
+    width: 32%;
+    &:nth-of-type(5n+1) {
+      margin-left: 2%;
+    }
+    &:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 640px) {
+    width: 48%;
+    &:nth-of-type(5n+1),
+    &:nth-of-type(3n+1) {
+      margin-left: 2%;
+    }
+    &:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+    margin: 0 0 1em 0;
+    &:nth-of-type(5n+1),
+    &:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+  }
+
+  .mentor-photo { width: 95px; }
+  h2 { margin: 1em 0 0.2em 0; }
+  .mentor-skills {
+    color: $subtext-gray;
+    margin: 0.5em 0 0 0;
+  }
+  .mentor-profile-link {
+    color: $button-blue;
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 700;
+    margin: 1.5em 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &:hover {
+      color: darken($button-blue, 10%);
+      -webkit-transition: all 0.1s ease;
+      transition: all 0.1s ease;
+    }
+  }
 }

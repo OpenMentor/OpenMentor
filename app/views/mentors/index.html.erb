@@ -1,7 +1,16 @@
-<h1>Mentors!</h1>
+<%= render "layouts/header" %>
 
-<ul>
-  <% @mentors.each do |mentor| %>
-    <li><%= mentor.name %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h3>Mentors</h3>
+
+  <ul class="mentor-list">
+    <% @mentors.each do |mentor| %>
+      <li class="mentor-card">
+        <a href="/"><img class="mentor-photo" src="/assets/default.png" src="Open Mentor Logo" /></a>
+        <h2><%= mentor.name %></h2>
+        <p class="mentor-skills">JavaScript, Ruby on Rails</p>
+        <a href="" class="mentor-profile-link">View Profile</a>
+      </li>
+    <% end %>
+  </ul>
+</div>
