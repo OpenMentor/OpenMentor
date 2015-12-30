@@ -1,6 +1,22 @@
 <%= form_for @mentor, url: mentor_update_path, html: { multipart: true } do |f| %>
-	<%= f.label :name %>
-  <%= f.text_field :name, value: @mentor.name %>
-  <%= f.file_field :profile_picture %>
-  <%= f.submit "Update" %>
+
+  <div class="field">
+    <%= f.label "Profile Picture" %>
+    <%= image_tag @mentor.profile_picture.url(:medium) %>
+    <%= f.file_field :profile_picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, autofocus: true %>
+    <%= f.text_field :name, value: @mentor.name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, value: @mentor.email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
 <% end %>
