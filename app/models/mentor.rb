@@ -9,4 +9,7 @@ class Mentor < ActiveRecord::Base
          :validatable,
          :confirmable,
          :lockable
+
+  has_many :skill_proposals, foreign_key: 'proposed_by'
+  has_many :reviewed_skill_proposals, class_name: 'SkillProposal', foreign_key: 'reviewed_by'
 end
