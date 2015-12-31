@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # MentorSkills
   get 'mentor_skills' => 'mentor_skills#index', as: :mentor_skills
+  post 'mentor_skills/create' => 'mentor_skills#create', as: :mentor_skills_create
   get 'mentor_skills/edit' => 'mentor_skills#edit', as: :mentor_skills_edit
   patch 'mentor_skills/update' => 'mentor_skills#update', as: :mentor_skills_update
 

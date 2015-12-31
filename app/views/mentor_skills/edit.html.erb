@@ -1,0 +1,18 @@
+<%= form_tag(mentor_skills_update_path, method: :patch) do %>
+  <% @mentor_skills.each do |mentor_skill| %>
+    <div class="field">
+      <%= check_box_tag "existing_skills[]", mentor_skill.id, true %>
+      <%= label_tag "#{mentor_skill.name}" %>
+    </div>
+  <% end %>
+
+  <% @skills.each do |skill| %>
+    <div class="field">
+      <%= check_box_tag "skills[]", skill.id %>
+      <%= label_tag "#{skill.name}" %>
+    </div>
+  <% end %>
+
+  <%= submit_tag "Update" %>
+
+<% end %>
