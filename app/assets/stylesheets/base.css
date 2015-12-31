@@ -44,7 +44,8 @@ h3 {
   font-weight: 500; }
 
 h4 {
-  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase; }
@@ -76,6 +77,7 @@ a {
     display: inline-block;
     margin: 0; }
   .header .logged-in .mentor-name {
+    color: #fff;
     margin-right: 1em; }
 
 a.button, .button, input[type=submit] {
@@ -174,6 +176,9 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.04);
   color: white; }
 
+.mentors .container {
+  padding: 2em 0; }
+
 .mentor-list {
   list-style: none;
   margin: 0;
@@ -181,11 +186,10 @@ textarea:focus {
   overflow: hidden; }
 
 .mentor-card {
-  background: rgba(0, 0, 0, 0.2);
+  background: #0A1C34;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   float: left;
   margin: 0 0 2em 3%;
   padding: 2.5em 1em 1.5em 1em;
@@ -230,18 +234,25 @@ textarea:focus {
   width: 95px; }
 
 .mentor-profile .container {
-  background: #fff;
+  background: transparent;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
   border-radius: 4px;
-  padding: 2em;
-  max-width: 900px;
-  margin-top: 1em; }
+  padding-top: 2em;
+  max-width: 840px; }
+  .mentor-profile .container.blue {
+    background: #0f3e76; }
 .mentor-profile .mentor-photo {
   float: left;
   margin-right: 2em; }
 .mentor-profile h1 {
-  color: #10253e;
+  color: #fff;
   display: inline-block;
   float: left; }
+
+.profile-bio {
+  font-size: 1.2em;
+  line-height: 1.5em; }
 
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08); }
