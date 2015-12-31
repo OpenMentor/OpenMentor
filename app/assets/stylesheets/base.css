@@ -345,6 +345,41 @@ textarea:focus {
   padding: 2.3em 0;
   width: 50%; }
 
+.select-skills {
+  padding: 2em 0;
+  text-align: center; }
+  .select-skills .container {
+    max-width: 800px; }
+  .select-skills .field {
+    display: inline; }
+  .select-skills .update-button {
+    margin: 2em auto 0 auto;
+    max-width: 30%; }
+  .select-skills input[type="checkbox"] {
+    position: absolute;
+    opacity: 0; }
+    .select-skills input[type="checkbox"] + label {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      margin: 0.5em;
+      border-radius: 50px;
+      color: white;
+      display: inline-block;
+      font-weight: 500;
+      padding: 0.6em 2em 0.5em 2em;
+      text-align: center; }
+      .select-skills input[type="checkbox"] + label:hover, .select-skills input[type="checkbox"] + label:focus, .select-skills input[type="checkbox"] + label:active {
+        cursor: pointer;
+        background-color: #fff;
+        color: #11253a; }
+    .select-skills input[type="checkbox"]:checked + label {
+      background-color: #fff;
+      color: #11253a; }
+      .select-skills input[type="checkbox"]:checked + label:hover, .select-skills input[type="checkbox"]:checked + label:focus, .select-skills input[type="checkbox"]:checked + label:active {
+        background-color: #fff; }
+
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08); }
   .footer .container {

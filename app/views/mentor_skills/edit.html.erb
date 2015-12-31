@@ -1,20 +1,26 @@
-<%= form_tag(mentor_skills_update_path, method: :patch) do %>
-  <% @mentor_skills.each do |mentor_skill| %>
-    <div class="field">
-      <%= check_box_tag "skills[]", mentor_skill.id, true %>
-      <%= label_tag mentor_skill.name, mentor_skill.name %>
-    </div>
-  <% end %>
+<%= render "layouts/header" %>
 
-  <% @skills.each do |skill| %>
-    <div class="field">
-      <%= check_box_tag "skills[]", skill.id %>
-      <%= label_tag skill.name, skill.name %>
-    </div>
-  <% end %>
+<div class="select-skills">
+  <div class="container">
+    <%= form_tag(mentor_skills_update_path, method: :patch) do %>
+      <% @mentor_skills.each do |mentor_skill| %>
+        <div class="field">
+          <%= check_box_tag mentor_skill.id, mentor_skill.id, true, name: "skills[]" %>
+          <%= label_tag mentor_skill.id, mentor_skill.name %>
+        </div>
+      <% end %>
 
-  <%= submit_tag "Update" %>
+      <% @skills.each do |skill| %>
+        <div class="field">
+          <%= check_box_tag skill.id, skill.id, false, name: "skills[]" %>
+          <%= label_tag skill.id, skill.name %>
+        </div>
+      <% end %>
 
-<% end %>
+      <p class="update-button"><%= submit_tag "Update" %></p>
 
-<%= link_to "Cancel", :back, :class => "button secondary small" %>
+    <% end %>
+
+    <%= link_to "Cancel", :back, :class => "button secondary small" %>
+  </div>
+</div>

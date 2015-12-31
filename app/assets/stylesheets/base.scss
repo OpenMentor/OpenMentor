@@ -424,6 +424,44 @@ textarea:focus {
   width: 50%;
 }
 
+.select-skills {
+  padding: 2em 0;
+  text-align: center;
+  .container { max-width: 800px; }
+  .field { display: inline; }
+  .update-button {
+    margin: 2em auto 0 auto;
+    max-width: 30%;
+  }
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      margin: 0.5em;
+      border-radius: 50px;
+      color: $text-white;
+      display: inline-block;
+      font-weight: 500;
+      padding: 0.6em 2em 0.5em 2em;
+      text-align: center;
+      &:hover, &:focus, &:active {
+        cursor: pointer;
+        background-color: #fff;
+        color: $darkest-blue;
+      }
+    }
+    &:checked + label {
+      background-color: #fff;
+      color: $darkest-blue;
+      &:hover, &:focus, &:active { background-color: #fff; }
+    }
+  }
+}
+
 // Footer
 
 .footer {
