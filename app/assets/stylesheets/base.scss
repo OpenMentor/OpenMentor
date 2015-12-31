@@ -51,9 +51,8 @@ h1 {
   line-height: 1.2em;
 }
 h2 {
-  color: $darkest-blue;
-  font-size: 1.3em;
-  font-weight: 700;
+  font-size: 1.2em;
+  font-weight: 500;
   margin: 1em 0;
 }
 
@@ -88,6 +87,7 @@ a {
     font-size: 1.2em;
     font-weight: 400;
     margin: 0;
+    padding: 0.3em 0;
     a {
       color: #fff;
       &:hover {
@@ -115,6 +115,7 @@ a.button, .button, input[type=submit] {
   -moz-border-radius: 50px;
   border-radius: 50px;
   color: $text-white;
+  display: inline-block;
   font-weight: 500;
   padding: 0.5em 2em 0.6em 2em;
   text-align: center;
@@ -124,7 +125,11 @@ a.button, .button, input[type=submit] {
     transition: all 0.1s ease;
   }
   &.small {
-    padding: 0.3em 1.5em 0.4em 1.5em;
+    padding: 0.5em 1.5em 0.4em 1.5em;
+  }
+  &.x-small {
+    padding: 0.4em 1.2em 0.3em 1.2em;
+    font-size: 0.9em;
   }
 }
 
@@ -192,7 +197,7 @@ textarea:focus {
 .form-logo {
   display: block;
   margin: 0 auto 1.5em auto;
-  width: 100px;
+  width: 110px;
 }
 
 .form-links {
@@ -220,16 +225,18 @@ textarea:focus {
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .mentor-card {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.2);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   float: left;
   margin: 0 0 2em 3%;
-  padding: 2em 1em 1.5em 1em;
+  padding: 2.5em 1em 1.5em 1em;
   text-align: center;
   width: 22.75%;
   &:nth-of-type(4n+1) {
@@ -266,23 +273,17 @@ textarea:focus {
   }
 
   h2 {
-    margin: 1em 0 0.2em 0;
-    a {
-      color: $darkest-blue;
-    }
+    font-weight: 500;
+    color: #fff;
+    margin: 1.5em 0 0.2em 0;
   }
   .mentor-skills {
-    color: $subtext-gray;
+    color: $subtext-white;
+    font-size: 0.9em;
     margin: 0.5em 0 0 0;
   }
-  .mentor-profile-link {
-    color: $button-blue;
-    display: inline-block;
-    font-size: 0.7em;
-    font-weight: 700;
-    margin: 1.5em 0 0 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  .button {
+    margin-top: 2.5em;
   }
 }
 
@@ -295,6 +296,8 @@ textarea:focus {
     background: #fff;
     border-radius: 4px;
     padding: 2em;
+    max-width: 900px;
+    margin-top: 1em;
   }
   .mentor-photo {
     float: left;

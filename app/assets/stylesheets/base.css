@@ -35,9 +35,8 @@ h1 {
   line-height: 1.2em; }
 
 h2 {
-  color: #10253e;
-  font-size: 1.3em;
-  font-weight: 700;
+  font-size: 1.2em;
+  font-weight: 500;
   margin: 1em 0; }
 
 h3 {
@@ -65,7 +64,8 @@ a {
   float: left;
   font-size: 1.2em;
   font-weight: 400;
-  margin: 0; }
+  margin: 0;
+  padding: 0.3em 0; }
   .header h1 a {
     color: #fff; }
     .header h1 a:hover {
@@ -85,6 +85,7 @@ a.button, .button, input[type=submit] {
   -moz-border-radius: 50px;
   border-radius: 50px;
   color: white;
+  display: inline-block;
   font-weight: 500;
   padding: 0.5em 2em 0.6em 2em;
   text-align: center; }
@@ -93,7 +94,10 @@ a.button, .button, input[type=submit] {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease; }
   a.button.small, .button.small, input[type=submit].small {
-    padding: 0.3em 1.5em 0.4em 1.5em; }
+    padding: 0.5em 1.5em 0.4em 1.5em; }
+  a.button.x-small, .button.x-small, input[type=submit].x-small {
+    padding: 0.4em 1.2em 0.3em 1.2em;
+    font-size: 0.9em; }
 
 .alert, .notice, .devise-alert {
   background: #3269a8;
@@ -151,7 +155,7 @@ textarea:focus {
 .form-logo {
   display: block;
   margin: 0 auto 1.5em auto;
-  width: 100px; }
+  width: 110px; }
 
 .form-links {
   text-align: center; }
@@ -173,16 +177,18 @@ textarea:focus {
 .mentor-list {
   list-style: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 .mentor-card {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.2);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   float: left;
   margin: 0 0 2em 3%;
-  padding: 2em 1em 1.5em 1em;
+  padding: 2.5em 1em 1.5em 1em;
   text-align: center;
   width: 22.75%; }
   .mentor-card:nth-of-type(4n+1) {
@@ -210,20 +216,15 @@ textarea:focus {
       .mentor-card:nth-of-type(4n+1), .mentor-card:nth-of-type(3n+1) {
         margin-left: 0; } }
   .mentor-card h2 {
-    margin: 1em 0 0.2em 0; }
-    .mentor-card h2 a {
-      color: #10253e; }
+    font-weight: 500;
+    color: #fff;
+    margin: 1.5em 0 0.2em 0; }
   .mentor-card .mentor-skills {
-    color: #a3aaaf;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9em;
     margin: 0.5em 0 0 0; }
-  .mentor-card .mentor-profile-link {
-    color: #3269a8;
-    display: inline-block;
-    font-size: 0.7em;
-    font-weight: 700;
-    margin: 1.5em 0 0 0;
-    text-transform: uppercase;
-    letter-spacing: 1px; }
+  .mentor-card .button {
+    margin-top: 2.5em; }
 
 .mentor-photo {
   width: 95px; }
@@ -231,7 +232,9 @@ textarea:focus {
 .mentor-profile .container {
   background: #fff;
   border-radius: 4px;
-  padding: 2em; }
+  padding: 2em;
+  max-width: 900px;
+  margin-top: 1em; }
 .mentor-profile .mentor-photo {
   float: left;
   margin-right: 2em; }

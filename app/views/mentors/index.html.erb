@@ -1,8 +1,6 @@
 <%= render "layouts/header" %>
 
 <div class="container">
-  <h3>Mentors</h3>
-
   <ul class="mentor-list">
     <% @mentors.each do |mentor| %>
       <li class="mentor-card">
@@ -11,7 +9,7 @@
           <h2><%= mentor.name %></h2>
         <% end %>
         <p class="mentor-skills">JavaScript, Ruby on Rails</p>
-        <%= link_to "View Profile", mentor_show_path(mentor), class: "mentor-profile-link" %>
+        <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small" %>
       </li>
     <% end %>
   </ul>
