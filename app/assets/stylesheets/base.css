@@ -58,6 +58,9 @@ a {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease; }
 
+em {
+  line-height: 1.2em; }
+
 .header .container {
   padding: 2em 0; }
 .header h1 {
@@ -100,6 +103,11 @@ a.button, .button, input[type=submit] {
   a.button.x-small, .button.x-small, input[type=submit].x-small {
     padding: 0.4em 1.2em 0.3em 1.2em;
     font-size: 0.9em; }
+  a.button.secondary, .button.secondary, input[type=submit].secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3); }
+    a.button.secondary:hover, .button.secondary:hover, input[type=submit].secondary:hover {
+      border: 2px solid rgba(255, 255, 255, 0.4); }
 
 .alert, .notice, .devise-alert {
   background: #3269a8;
@@ -116,9 +124,12 @@ a.button, .button, input[type=submit] {
   max-width: 420px; }
   .form-container h2 {
     text-align: center; }
+  @media (max-width: 750px) {
+    .form-container {
+      margin: 1em auto 0.5em auto; } }
 
 label {
-  display: inline-block;
+  display: block;
   margin-bottom: 0.3em; }
 
 .field {
@@ -142,7 +153,11 @@ input {
   padding: 0.6em;
   width: 100%; }
 
+.inline {
+  display: inline-block; }
+
 input[type=checkbox] {
+  display: inline-block;
   margin-right: 0.4em;
   width: auto; }
 
@@ -230,9 +245,6 @@ textarea:focus {
   .mentor-card .button {
     margin-top: 2.5em; }
 
-.mentor-photo {
-  width: 95px; }
-
 .mentor-profile .container {
   background: transparent;
   -moz-border-radius: 4px;
@@ -242,17 +254,33 @@ textarea:focus {
   max-width: 840px; }
   .mentor-profile .container.blue {
     background: #0f3e76; }
-.mentor-profile .mentor-photo {
-  float: left;
-  margin-right: 2em; }
 .mentor-profile h1 {
   color: #fff;
   display: inline-block;
   float: left; }
 
+.mentor-photo {
+  width: 95px; }
+
 .profile-bio {
   font-size: 1.2em;
   line-height: 1.5em; }
+
+.mentor-photo-upload {
+  border: none;
+  color: #fff;
+  line-height: 1em;
+  float: left;
+  padding: 2.3em 0;
+  width: 77%; }
+
+.photo-upload-container {
+  float: left;
+  margin-bottom: 1em;
+  width: 100%; }
+  @media (max-width: 480px) {
+    .photo-upload-container .mentor-photo {
+      width: 100%; } }
 
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08); }

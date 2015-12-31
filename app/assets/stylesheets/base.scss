@@ -79,6 +79,10 @@ a {
   }
 }
 
+em {
+  line-height: 1.2em;
+}
+
 // Header
 .header {
   .container { padding: 2em 0; }
@@ -133,6 +137,13 @@ a.button, .button, input[type=submit] {
     padding: 0.4em 1.2em 0.3em 1.2em;
     font-size: 0.9em;
   }
+  &.secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    &:hover {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+  }
 }
 
 // Alerts
@@ -155,10 +166,13 @@ a.button, .button, input[type=submit] {
   h2 {
     text-align: center;
   }
+  @media (max-width: 750px) {
+    margin: 1em auto 0.5em auto;
+  }
 }
 
 label {
-  display: inline-block;
+  display: block;
   margin-bottom: 0.3em;
 }
 
@@ -182,7 +196,12 @@ input {
   width: 100%;
 }
 
+.inline {
+  display: inline-block;
+}
+
 input[type=checkbox] {
+  display: inline-block;
   margin-right: 0.4em;
   width: auto;
 }
@@ -292,8 +311,6 @@ textarea:focus {
   }
 }
 
-.mentor-photo { width: 95px; }
-
 // Mentor Profile
 
 .mentor-profile {
@@ -308,10 +325,6 @@ textarea:focus {
       background: $medium-blue;
     }
   }
-  .mentor-photo {
-    float: left;
-    margin-right: 2em;
-  }
   h1 {
     color: #fff;
     display: inline-block;
@@ -319,11 +332,34 @@ textarea:focus {
   }
 }
 
+.mentor-photo {
+  width: 95px;
+}
+
 .profile-bio {
   font-size: 1.2em;
   line-height: 1.5em;
 }
 
+.mentor-photo-upload {
+  border: none;
+  color: #fff;
+  line-height: 1em;
+  float: left;
+  padding: 2.3em 0;
+  width: 77%;
+}
+
+.photo-upload-container {
+  float: left;
+  margin-bottom: 1em;
+  width: 100%;
+  @media (max-width: 480px) {
+    .mentor-photo {
+      width: 100%;
+    }
+  }
+}
 
 // Footer
 
