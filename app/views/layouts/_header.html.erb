@@ -4,7 +4,7 @@
     <div class="logged-in">
       <p><%= link_to(current_mentor.name, mentor_show_path(current_mentor), class: "mentor-name") %></p>
       <% if mentor_signed_in? %>
-        <p><%= link_to('Logout', destroy_mentor_session_path, :method => :delete, :class => "button x-small") %></p>
+        <p><%= link_to('Logout', destroy_mentor_session_path, :method => :delete, :class => "button x-small secondary") %></p>
       <% end %>
     </div>
   </div>

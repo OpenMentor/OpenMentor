@@ -36,7 +36,7 @@ body {
   font-size: 1em;
   font-weight: 400;
   line-height: 1.4em;
-  height: 100%;
+  min-height: 100vh;
 }
 
 h1 {
@@ -135,7 +135,8 @@ a.button, .button, input[type=submit] {
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.3);
     &:hover {
-      border: 2px solid rgba(255, 255, 255, 0.4);
+      background: #fff;
+      color: $button-blue;
     }
   }
 }
@@ -276,14 +277,14 @@ textarea:focus {
 }
 
 .mentor-card {
-  background: #28425E;
-  background: rgba(83, 120, 160, 0.27);
+  background: $button-blue;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   float: left;
   margin: 0 0 2em 3%;
   padding: 2.5em 1em 1.5em 1em;
+  position: relative;
   text-align: center;
   width: 22.75%;
   &:nth-of-type(4n+1) {
@@ -335,10 +336,16 @@ textarea:focus {
   }
 }
 
+.social-links {
+  position: absolute;
+  top: 1em;
+  right: 1.2em;
+}
+
 // Mentor Profile
 
 .mentor-profile {
-  margin-bottom: 3em;
+  background: $button-blue;
   .container {
     background: transparent;
     -moz-border-radius: 4px;
@@ -361,23 +368,30 @@ textarea:focus {
   }
 }
 
+.profile-header {
+  padding: 7em 0 2em 0;
+  margin-top: -7em;
+}
+
 .mentor-photo {
   width: 95px;
 }
 
 .profile-menu {
+  margin-top: 1em;
   text-align: center;
   p {
     display: inline-block;
+    margin: 0;
     margin-left: 0.5em;
     &:first-child { margin-left: 0; }
   }
-
 }
 
 .profile-bio {
   font-size: 1.2em;
   line-height: 1.5em;
+  padding: 1em 0;
 }
 
 .photo-upload-container {
