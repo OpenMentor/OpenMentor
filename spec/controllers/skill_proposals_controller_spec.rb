@@ -40,7 +40,7 @@ describe SkillProposalsController do
     end
 
     it "redirects to new" do
-      expect(@result).to redirect_to(new_skill_proposal_path)
+      expect(@result).to redirect_to(skill_proposal_new_path)
     end
   end
 
@@ -59,7 +59,7 @@ describe SkillProposalsController do
     end
 
     it "redirects to new" do
-      expect(@result).to redirect_to(new_skill_proposal_path)
+      expect(@result).to redirect_to(skill_proposal_new_path)
     end
   end
 
