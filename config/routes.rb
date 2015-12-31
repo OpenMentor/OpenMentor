@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   patch 'profiles/update' => 'mentors#update', as: :mentor_update
 
   # MentorSkills
-  get 'mentor_skills' => 'mentor_skills#index', as: :mentor_skills
   get 'mentor_skills/edit' => 'mentor_skills#edit', as: :mentor_skills_edit
   patch 'mentor_skills/update' => 'mentor_skills#update', as: :mentor_skills_update
 

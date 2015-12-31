@@ -1,9 +1,5 @@
 class MentorSkillsController < ApplicationController
 
-  def index
-    @mentor_skills = current_mentor.skills
-  end
-
   def edit
     @mentor_skills = current_mentor.skills
     @skills = Skill.all - @mentor_skills
@@ -14,7 +10,7 @@ class MentorSkillsController < ApplicationController
       create_new_mentor_skills!
       remove_old_mentor_skills!
       flash[:notice] = update_success_message
-      redirect_to mentor_skills_path
+      redirect_to mentor_show_path(current_mentor)
     rescue
       flash[:alert] = update_error_message
       redirect_to action: "edit"

@@ -5,15 +5,6 @@ describe MentorSkillsController do
   let(:mentor) { mentor_skill.mentor }
   let(:skill) { mentor_skill.skill }
 
-  context "index" do
-    it "assigns the skills associated with the given mentor" do
-      as_mentor(mentor) do
-        get :index
-        expect(assigns(:mentor_skills)).to eq [skill]
-      end
-    end
-  end
-
   context "update mentor skill success" do
     before do
       @new_skill = Factories::Skill.create!
@@ -27,7 +18,7 @@ describe MentorSkillsController do
     end
 
     it "redirects to the mentor skill index" do
-      expect(response).to redirect_to(mentor_skills_path)
+      expect(response).to redirect_to(mentor_show_path(mentor))
     end
 
     it "sets a success message" do
