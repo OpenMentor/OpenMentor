@@ -5,7 +5,7 @@
       <% @mentors.each do |mentor| %>
         <li class="mentor-card">
           <%= link_to mentor_show_path(mentor) do %>
-            <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo" %>
+            <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo" %></div>
             <h2><%= mentor.name %></h2>
           <% end %>
           <p class="mentor-skills">JavaScript, Ruby on Rails</p>

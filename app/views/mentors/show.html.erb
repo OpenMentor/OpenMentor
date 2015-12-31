@@ -2,8 +2,14 @@
 
 <div class="mentor-profile">
   <div class="container profile-header">
-    <div><%= image_tag @mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
+    <div class="mentor-image-container"><%= image_tag @mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
     <h1><%= @mentor.name %></h1>
+    <% if @mentor == current_mentor %>
+      <div class="profile-menu">
+        <p><%= link_to('Settings', mentor_edit_path, :class => "button x-small") %></p>
+        <p><%= link_to('Change Password', edit_mentor_registration_path, :class => "button x-small") %></p>
+      </div>
+    <% end %>
   </div>
   <div class="container profile-bio">
     <h4>About <%= @mentor.name %></h4>

@@ -23,12 +23,6 @@ body {
   line-height: 1.4em;
   height: 100%; }
 
-.wrapper {
-  background: #10253e;
-  background-image: url("/assets/stars.jpg");
-  background-size: cover;
-  min-height: 100vh; }
-
 h1 {
   font-size: 2.2em;
   font-weight: 300;
@@ -120,7 +114,7 @@ a.button, .button, input[type=submit] {
   outline: none; }
 
 .form-container {
-  margin: 4em auto 0.5em auto;
+  margin: 4em auto 3em auto;
   max-width: 420px; }
   .form-container h2 {
     text-align: center; }
@@ -165,7 +159,7 @@ input[type=text]:focus,
 input[type=password]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #a3aaaf;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease; }
 
@@ -190,6 +184,23 @@ textarea:focus {
 .confirm input[type=email] {
   background: rgba(255, 255, 255, 0.04);
   color: white; }
+.log-in input[type=text]:focus,
+.log-in input[type=password]:focus,
+.log-in input[type=email]:focus,
+.log-in textarea:focus,
+.sign-up input[type=text]:focus,
+.sign-up input[type=password]:focus,
+.sign-up input[type=email]:focus,
+.sign-up textarea:focus,
+.confirm input[type=text]:focus,
+.confirm input[type=password]:focus,
+.confirm input[type=email]:focus,
+.confirm textarea:focus {
+  border: 1px solid rgba(255, 255, 255, 0.06); }
+
+.edit-profile,
+.edit-mentor {
+  margin: 2em auto 3em auto; }
 
 .mentors .container {
   padding: 2em 0; }
@@ -199,6 +210,21 @@ textarea:focus {
   margin: 0;
   padding: 0;
   overflow: hidden; }
+
+.mentor-image-container {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 95px;
+  width: 95px; }
+  .mentor-image-container img {
+    display: block;
+    height: 95px;
+    width: auto; }
 
 .mentor-card {
   background: #0A1C34;
@@ -245,39 +271,51 @@ textarea:focus {
   .mentor-card .button {
     margin-top: 2.5em; }
 
-.mentor-profile .container {
-  background: transparent;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  padding-top: 2em;
-  max-width: 840px; }
-  .mentor-profile .container.blue {
-    background: #0f3e76; }
-.mentor-profile h1 {
-  color: #fff;
-  display: inline-block;
-  float: left; }
+.mentor-profile {
+  margin-bottom: 3em; }
+  .mentor-profile .container {
+    background: transparent;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    max-width: 840px; }
+    .mentor-profile .container.blue {
+      background: #0f3e76; }
+  .mentor-profile h1 {
+    color: #fff;
+    margin-bottom: 0;
+    text-align: center; }
 
 .mentor-photo {
   width: 95px; }
+
+.profile-menu {
+  text-align: center; }
+  .profile-menu p {
+    display: inline-block;
+    margin-left: 0.5em; }
+    .profile-menu p:first-child {
+      margin-left: 0; }
 
 .profile-bio {
   font-size: 1.2em;
   line-height: 1.5em; }
 
 .mentor-photo-upload {
+  background: transparent;
   border: none;
   color: #fff;
   line-height: 1em;
   float: left;
   padding: 2.3em 0;
-  width: 77%; }
+  width: 75%; }
 
 .photo-upload-container {
   float: left;
   margin-bottom: 1em;
   width: 100%; }
+  .photo-upload-container .mentor-image-container {
+    float: right; }
   @media (max-width: 480px) {
     .photo-upload-container .mentor-photo {
       width: 100%; } }
