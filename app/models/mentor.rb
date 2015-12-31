@@ -15,6 +15,7 @@ class Mentor < ActiveRecord::Base
 
   has_many :skill_proposals, foreign_key: 'proposed_by'
   has_many :reviewed_skill_proposals, class_name: 'SkillProposal', foreign_key: 'reviewed_by'
+  has_many :mentor_skills
   has_many :skills, through: :mentor_skills
 
   # Paperclip settings
