@@ -8,6 +8,11 @@
       <%= devise_error_messages! %>
 
       <div class="field">
+        <%= f.label :email, autofocus: true %>
+        <%= f.text_field :email, value: @mentor.email %>
+      </div>
+
+      <div class="field">
         <%= f.label :password, :class => "inline" %> <em>(leave blank if you don't want to change it)</em>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
