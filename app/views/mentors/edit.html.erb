@@ -4,7 +4,6 @@
     <%= form_for @mentor, url: mentor_update_path, html: { multipart: true } do |f| %>
 
       <div class="field">
-        <%= f.label "Profile Picture" %>
         <div class="photo-upload-container">
           <div class="mentor-image-container"><%= image_tag @mentor.profile_picture.url(:medium), :class => "mentor-photo" %></div>
           <%= f.file_field :profile_picture, :class => "mentor-photo-upload" %>

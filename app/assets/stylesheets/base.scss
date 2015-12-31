@@ -349,8 +349,13 @@ textarea:focus {
   }
   h1 {
     color: #fff;
-    margin-bottom: 0;
+    margin-bottom: 0.3em;
     text-align: center;
+  }
+  .mentor-image-container {
+    height: 150px;
+    width: 150px;
+    img { height: 150px; }
   }
 }
 
@@ -373,28 +378,34 @@ textarea:focus {
   line-height: 1.5em;
 }
 
-.mentor-photo-upload {
-  background: transparent;
-  border: none;
-  color: #fff;
-  line-height: 1em;
-  float: left;
-  padding: 2.3em 0;
-  width: 75%;
-}
-
 .photo-upload-container {
   float: left;
   margin-bottom: 1em;
   width: 100%;
   .mentor-image-container {
-    float: right;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+    img {
+      height: 150px;
+    }
   }
   @media (max-width: 480px) {
     .mentor-photo {
       width: 100%;
     }
   }
+}
+
+.mentor-photo-upload {
+  background: transparent;
+  border: none;
+  color: #fff;
+  display: block;
+  line-height: 1em;
+  margin: 0 auto;
+  padding: 2.3em 0;
+  width: 50%;
 }
 
 // Footer
