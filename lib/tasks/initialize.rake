@@ -28,7 +28,7 @@ namespace :initialize do
     file.each_line do |skill_name|
       begin
         puts "- #{skill_name}"
-        Skill.create!(name: skill_name.capitalize)
+        Skill.create!(name: skill_name.chomp)
       rescue ActiveRecord::RecordInvalid
       end
     end
