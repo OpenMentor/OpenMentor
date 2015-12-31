@@ -14,28 +14,82 @@ describe MentorSkillsController do
     end
   end
 
-  context "create mentor skill success" do
+  context "update mentor skill success" do
     before do
-      @other_skill = Factories::Skill.create!
+      @new_skill = Factories::Skill.create!
       as_mentor(mentor) do
-        post :create, skill: { id: @other_skill.id }
+        patch :update, skills: [@new_skill.id, skill.id]
       end
     end
 
-    it "creates a new mentor skill" do
-      mentor_skill = MentorSkill.where(mentor_id: mentor.id, skill_id: @other_skill.id).first
-
-      expect(mentor_skill).to_not be_nil
+    it "updates mentor skills" do
+      expect(mentor.skills.map(&:id)).to eq [@new_skill.id, skill.id]
     end
 
+    it "redirects to the mentor skill index" do
+      expect(response).to redirect_to(mentor_skills_path)
+    end
+
+    it "sets a success message" do
+      expect(flash[:notice]).to_not be_nil
+    end
   end
 
-  context "create mentor skill error" do
+  context "update mentor skills does not duplicate existing mentor skills" do
+    before do
+      @new_skill = Factories::Skill.create!
+      as_mentor(mentor) do
+        patch :update, skills: [@new_skill.id, skill.id]
+      end
+    end
+
+    it "ignores existing skill ids that already belogn to the mentor" do
+      expect(mentor.skills).to eq [@new_skill, skill]
+    end
+  end
+
+  context "update mentor skills removes skills no longer valid for the mentor" do
+    before do
+      @new_skill = Factories::Skill.create!
+      as_mentor(mentor) do
+        patch :update, skills: [@new_skill.id]
+      end
+    end
+
+    it "removes original skill" do
+      expect(mentor.skills).to eq [@new_skill]
+    end
+  end
+
+  context "update mentor skill error" do
+    before do
+      as_mentor(mentor) do
+        patch :update, skills: ["alert"]
+      end
+    end
+
+    it "sets an alert flash message" do
+      expect(flash[:alert]).to_not be_nil
+    end
+
+    it "redirects back to the edit mentor skill page" do
+      expect(response).to redirect_to(mentor_skills_edit_path)
+    end
   end
 
   context "edit" do
-  end
+    before do
+      as_mentor(mentor) do
+        get :edit
+      end
+    end
 
-  context "update" do
+    it "assigns existing mentor skills" do
+      expect(assigns(:mentor_skills)).to eq mentor.skills
+    end
+
+    it "assigns all skills" do
+      expect(assigns(:skills)).to eq(Skill.all - mentor.skills)
+    end
   end
 end
