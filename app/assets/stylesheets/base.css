@@ -14,7 +14,8 @@
     clear: both; }
 
 body {
-  background: #10253e;
+  background: #11253a;
+  background: linear-gradient(#11253a, #193048);
   color: white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
@@ -136,7 +137,7 @@ label {
   display: inline; }
 
 input {
-  color: #10253e;
+  color: #11253a;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -227,7 +228,8 @@ textarea:focus {
     width: auto; }
 
 .mentor-card {
-  background: #0A1C34;
+  background: #28425E;
+  background: rgba(83, 120, 160, 0.27);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -280,7 +282,7 @@ textarea:focus {
     border-radius: 4px;
     max-width: 840px; }
     .mentor-profile .container.blue {
-      background: #0f3e76; }
+      background: #0f3a6c; }
   .mentor-profile h1 {
     color: #fff;
     margin-bottom: 0.3em;

@@ -1,6 +1,6 @@
 // Color
-$darkest-blue: #10253E;
-$medium-blue: #0F3E76;
+$darkest-blue: #11253A;
+$medium-blue: #0F3A6C;
 $button-blue: #3269a8;
 $text-white: #ffffff;
 $text-dark-blue: #122B48;
@@ -29,6 +29,7 @@ $subtext-gray: #a3aaaf;
 // Typography
 body {
   background: $darkest-blue;
+  background: linear-gradient($darkest-blue, #193048);
   color: $text-white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
@@ -275,7 +276,8 @@ textarea:focus {
 }
 
 .mentor-card {
-  background:  #0A1C34;
+  background: #28425E;
+  background: rgba(83, 120, 160, 0.27);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
