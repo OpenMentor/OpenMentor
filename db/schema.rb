@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20160101043931) do
   create_table "availabilities", force: :cascade do |t|
     t.integer  "mentor_id"
     t.integer  "day",        null: false
-    t.time     "start",      null: false
-    t.time     "end",        null: false
+    t.integer  "start_hour", null: false
+    t.integer  "end_hour",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20160101043931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "mentor_skills", ["mentor_id", "skill_id"], name: "index_mentor_skills_on_mentor_id_and_skill_id", unique: true, using: :btree
 
   create_table "mentors", force: :cascade do |t|
     t.string   "name",                                         null: false
