@@ -48,7 +48,8 @@ namespace :initialize do
           admin: false,
           name: mentor_name,
           email: email,
-          password: "password"
+          password: "password",
+          time_zone: ActiveSupport::TimeZone.all.sample.name
         )
       rescue ActiveRecord::RecordInvalid
       end
