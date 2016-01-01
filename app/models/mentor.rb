@@ -17,6 +17,7 @@ class Mentor < ActiveRecord::Base
   has_many :reviewed_skill_proposals, class_name: 'SkillProposal', foreign_key: 'reviewed_by'
   has_many :mentor_skills, dependent: :destroy
   has_many :skills, through: :mentor_skills
+  has_many :availabilities
 
   # Paperclip settings
   has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/:style/missing.png"
