@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require list.v1.1.1
+//= require list.pagination.v0.1.1
 //= require_tree .

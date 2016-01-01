@@ -2,6 +2,7 @@ class MentorsController < ApplicationController
 
   def index
     @mentors = Mentor.where.not(id: current_mentor.id)
+    @skill_names = Skill.all.map(&:name)
   end
 
   def show
