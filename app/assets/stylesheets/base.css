@@ -362,7 +362,8 @@ textarea:focus {
 
 .profile-header {
   padding: 7em 0 2em 0;
-  margin-top: -7em; }
+  margin-top: -7em;
+  min-height: 100vh; }
 
 .mentor-photo {
   width: 95px; }

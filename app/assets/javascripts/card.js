@@ -5,7 +5,7 @@
   clickListener = function(card) {
     return card.addEventListener("click", function(e) {
       var cardClassList;
-      cardClassList = $(this).parent('.effect__click')[0].classList;
+      cardClassList = $(this).closest('.effect__click')[0].classList;
       if (cardClassList.contains("flipped") === true) {
         return cardClassList.remove("flipped");
       } else {
@@ -17,7 +17,6 @@
   cardFlip = function() {
     var card, cards, _i, _len, _results;
     cards = $(".social-links");
-    console.log(cards);
     _results = [];
     for (_i = 0, _len = cards.length; _i < _len; _i++) {
       card = cards[_i];

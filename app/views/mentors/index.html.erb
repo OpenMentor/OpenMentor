@@ -15,9 +15,9 @@
       <div class="mentor-list list">
         <% @mentors.each do |mentor| %>
           <div class="card effect__click">
-            <span class="social-links"><i class="icon-dot-3"></i></span>
             <div class="card__front">
-                <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
+              <span class="social-links"><i class="icon-dot-3"></i></span>
+              <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
               <%= link_to mentor_show_path(mentor) do %>
                 <h2 class="mentor-name js-mentor-name ellipsis"><%= mentor.name %></h2>
               <% end %>
@@ -25,6 +25,7 @@
               <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
             </div>
             <div class="card__back">
+              <span class="social-links"><i class="icon-dot-3"></i></span>
               <a href="">GitHub</a>
               <a href="">Twitter</a>
               <a href="">LinkedIn</a>
