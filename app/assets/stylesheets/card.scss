@@ -77,10 +77,24 @@ $subtext-gray: #a3aaaf;
 .card__back {
   background: #1C497F;
   a {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: default;
     display: block;
-    font-size: 1.2em;
-    padding: 0.4em 0;
+    float: left;
+    font-size: 3em;
+    line-height: 0.6em;
+    padding: 0.6em 0.5em;
+    width: 50%;
+    &.present {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  .social-link-icons {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2em 0;
+    width: 90%;
   }
 }
 
