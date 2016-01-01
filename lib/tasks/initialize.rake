@@ -6,6 +6,7 @@ namespace :initialize do
     seed_skills
     seed_mentors
     seed_mentor_skills
+    seed_availabilities
   end
 
   desc "seed initial skills"
@@ -49,7 +50,7 @@ namespace :initialize do
           name: mentor_name,
           email: email,
           password: "password",
-          time_zone: ActiveSupport::TimeZone.all.sample.name
+          time_zone: ActiveSupport::TimeZone.all.sample.name,
         )
       rescue ActiveRecord::RecordInvalid
       end
@@ -72,6 +73,9 @@ namespace :initialize do
         end
       end
     end
+  end
+
+  def seed_availabilties
   end
 
   initialize_load_path
