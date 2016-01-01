@@ -1,0 +1,28 @@
+<h3>HERE</h3>
+
+<table>
+  <thead>
+    <tr>
+      <% @days.each do |day| %>
+        <th><%= day.capitalize %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% initial_time = Time.new('00:00') %>
+    <% 24.times do |hour| %>
+      <% current_time = initial_time + hour.send(:hours) %>
+      <tr>
+        <td><%= current_time.strftime("%H:%M") %></td>
+        <% @days.each do |day| %>
+          <%= require 'pry'; binding.pry %>
+          <% if @availabilities.where(start: current_time, day: day).any? %>
+            <td>Available</td>
+          <% else %>
+            <td></td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
