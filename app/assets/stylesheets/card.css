@@ -58,8 +58,9 @@
     float: left;
     font-size: 3em;
     line-height: 0.6em;
-    padding: 0.6em 0.5em;
-    width: 50%; }
+    padding: 0.3em 0em;
+    margin: 0.1em 0.3em 0.3em 0.3em;
+    width: 36%; }
     .card__back a.present {
       color: #fff;
       cursor: pointer; }
