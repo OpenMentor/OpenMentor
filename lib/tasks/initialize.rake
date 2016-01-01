@@ -5,6 +5,7 @@ namespace :initialize do
   task :all => :environment do
     seed_skills
     seed_mentors
+    seed_mentor_skills
   end
 
   desc "seed initial skills"
@@ -50,6 +51,24 @@ namespace :initialize do
           password: "password"
         )
       rescue ActiveRecord::RecordInvalid
+      end
+    end
+  end
+
+  def seed_mentor_skills
+    puts "Creating the following mentor skills:"
+    Mentor.all.each do |mentor|
+      puts "For #{mentor.name}"
+      5.times do |n|
+        skill = Skill.all.sample
+        puts "- #{skill.name}"
+        begin
+          MentorSkill.create!(
+            mentor: mentor,
+            skill: skill
+          )
+        rescue ActiveRecord::RecordNotUnique
+        end
       end
     end
   end
