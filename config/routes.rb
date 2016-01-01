@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   get 'skill_proposals' => 'skill_proposals#index', as: :skill_proposals
   get 'skill_proposals/new' => 'skill_proposals#new', as: :skill_proposal_new
   put 'skill_proposals/create' => 'skill_proposals#create', as: :skill_proposal_create
+
+  # Availabilities (scoped to Mentor)
+  get 'mentor/:id/availabilities' => 'mentors/availabilities#index', as: :availabilities
 end
