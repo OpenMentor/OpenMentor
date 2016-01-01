@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
 
-  def set_time_zone
-    Time.use_zone(current_mentor.time_zone &block)
+  def set_time_zone(&block)
+    Time.use_zone(current_mentor.time_zone, &block)
   end
 end
