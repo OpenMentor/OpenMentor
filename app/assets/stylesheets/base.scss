@@ -77,6 +77,12 @@ em {
   line-height: 1.2em;
 }
 
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 // Header
 .header {
   .container { padding: 2em 0; }
@@ -137,6 +143,34 @@ a.button, .button, input[type=submit] {
     &:hover {
       background: #fff;
       color: $button-blue;
+    }
+  }
+}
+
+.pagination {
+  display: block;
+  list-style: none;
+  text-align: center;
+  margin: 1em auto;
+  padding: 0;
+  li {
+    display: inline-block;
+    margin: 0 0.25em;
+    a {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      font-weight: 700;
+      padding: 0.3em 0.8em;
+      &:hover {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        -webkit-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+      }
+    }
+    &.active a {
+      color: $darkest-blue;
+      background: #fff;
     }
   }
 }
@@ -268,8 +302,13 @@ textarea:focus {
   .container { padding: 2em 0; }
 }
 
+.search-container {
+  margin: 0 auto 4em auto;
+  @media (max-width: 750px) {
+    margin-bottom: 2em;
+  }
+}
 .skill-search {
-  margin: 0 auto 3em auto;
   text-align: center;
   input[type=text] {
     background: transparent;
@@ -281,16 +320,24 @@ textarea:focus {
     max-width: 500px;
     padding: 1em 2em;
     &:focus { color: #fff; }
+    @media (max-width: 750px) {
+      width: 100%;
+    }
   }
   ::-webkit-input-placeholder { color: #fff; }
   :-moz-placeholder { color: #fff; }
   ::-moz-placeholder { color: #fff; }
   :-ms-input-placeholder { color: #fff; }
   .sort {
+    display: inline-block;
     cursor: pointer;
     padding: 0 1em;
     &:hover {
       color: $subtext-white;
+    }
+    @media (max-width: 750px) {
+      padding: 1em 1em 0 1em;
+      width: 100%;
     }
   }
 }
@@ -369,10 +416,16 @@ textarea:focus {
     color: #fff;
     margin: 1.5em 0 0.2em 0;
   }
+  .mentor-name {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
   .mentor-skills {
     color: $subtext-white;
     font-size: 0.9em;
-    margin: 0.5em 0 0 0;
+    margin: 0.5em auto 0 auto;
+    width: 80%;
   }
   .button {
     margin-top: 2.5em;

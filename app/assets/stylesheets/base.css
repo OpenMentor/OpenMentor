@@ -56,6 +56,11 @@ a {
 em {
   line-height: 1.2em; }
 
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
 .header .container {
   padding: 2em 0; }
 .header h1 {
@@ -104,6 +109,29 @@ a.button, .button, input[type=submit] {
     a.button.secondary:hover, .button.secondary:hover, input[type=submit].secondary:hover {
       background: #fff;
       color: #3269a8; }
+
+.pagination {
+  display: block;
+  list-style: none;
+  text-align: center;
+  margin: 1em auto;
+  padding: 0; }
+  .pagination li {
+    display: inline-block;
+    margin: 0 0.25em; }
+    .pagination li a {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      font-weight: 700;
+      padding: 0.3em 0.8em; }
+      .pagination li a:hover {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        -webkit-transition: all 0.1s ease;
+        transition: all 0.1s ease; }
+    .pagination li.active a {
+      color: #11253a;
+      background: #fff; }
 
 .alert, .notice, .devise-alert {
   background: #3269a8;
@@ -227,8 +255,13 @@ textarea:focus {
 .mentors .container {
   padding: 2em 0; }
 
+.search-container {
+  margin: 0 auto 4em auto; }
+  @media (max-width: 750px) {
+    .search-container {
+      margin-bottom: 2em; } }
+
 .skill-search {
-  margin: 0 auto 3em auto;
   text-align: center; }
   .skill-search input[type=text] {
     background: transparent;
@@ -241,6 +274,9 @@ textarea:focus {
     padding: 1em 2em; }
     .skill-search input[type=text]:focus {
       color: #fff; }
+    @media (max-width: 750px) {
+      .skill-search input[type=text] {
+        width: 100%; } }
   .skill-search ::-webkit-input-placeholder {
     color: #fff; }
   .skill-search :-moz-placeholder {
@@ -250,10 +286,15 @@ textarea:focus {
   .skill-search :-ms-input-placeholder {
     color: #fff; }
   .skill-search .sort {
+    display: inline-block;
     cursor: pointer;
     padding: 0 1em; }
     .skill-search .sort:hover {
       color: rgba(255, 255, 255, 0.5); }
+    @media (max-width: 750px) {
+      .skill-search .sort {
+        padding: 1em 1em 0 1em;
+        width: 100%; } }
 
 .mentor-list {
   list-style: none;
@@ -315,10 +356,15 @@ textarea:focus {
     font-weight: 500;
     color: #fff;
     margin: 1.5em 0 0.2em 0; }
+  .mentor-card .mentor-name {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; }
   .mentor-card .mentor-skills {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9em;
-    margin: 0.5em 0 0 0; }
+    margin: 0.5em auto 0 auto;
+    width: 80%; }
   .mentor-card .button {
     margin-top: 2.5em; }
 
