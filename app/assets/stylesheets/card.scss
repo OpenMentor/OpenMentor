@@ -1,6 +1,6 @@
 // Color
 $darkest-blue: #11253A;
-$medium-blue: #0F3A6C;
+$medium-blue: #1C497F;
 $button-blue: #3269a8;
 $text-white: #ffffff;
 $text-dark-blue: #122B48;
@@ -75,7 +75,7 @@ $subtext-gray: #a3aaaf;
 }
 
 .card__back {
-  background: #1C497F;
+  background: $medium-blue;
   a {
     color: rgba(255, 255, 255, 0.2);
     cursor: default;

@@ -250,7 +250,7 @@ textarea:focus {
 
 .edit-profile,
 .edit-mentor {
-  margin: 2em auto 3em auto; }
+  margin: 0 auto 3em auto; }
 
 .mentors .container {
   padding: 2em 0; }
@@ -347,7 +347,7 @@ textarea:focus {
   border-radius: 4px;
   max-width: 840px; }
   .mentor-profile .container.blue {
-    background: #0f3a6c; }
+    background: #1c497f; }
 .mentor-profile h1 {
   color: #fff;
   margin-bottom: 0.3em;
