@@ -1,15 +1,15 @@
 # Based on this tutorial: http://callmenick.com/post/css-transitions-transforms-animations-flipping-card
-
 clickListener = (card) ->
 	card.addEventListener "click", (e) ->
-    card = this.classList
-    if card.contains("flipped") == true
-      card.remove("flipped")
+    cardClassList = $(this).parent('.effect__click')[0].classList
+    if cardClassList.contains("flipped") == true
+      cardClassList.remove("flipped")
     else
-      card.add("flipped")
+      cardClassList.add("flipped")
 
 cardFlip = ->
-  cards = document.querySelectorAll(".card.effect__click")
+  cards = $(".social-links")
+  console.log cards
   clickListener card for card in cards
 
 $ ->

@@ -12,26 +12,27 @@
           <span class="sort" data-sort="js-mentor-name">Sort by name</span>
         </div>
       </div>
-      <ul class="mentor-list list">
+      <div class="mentor-list list">
         <% @mentors.each do |mentor| %>
           <div class="card effect__click">
+            <span class="social-links"><i class="icon-dot-3"></i></span>
             <div class="card__front">
-              <li class="mentor-card">
-                <a href="" class="social-links"><i class="icon-dot-3"></i></a>
-                <%= link_to mentor_show_path(mentor) do %>
-                  <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
-                  <h2 class="mentor-name js-mentor-name ellipsis"><%= mentor.name %></h2>
-                <% end %>
-                <p class="mentor-skills js-mentor-skills ellipsis"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
-                <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
-              </li>
+                <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
+              <%= link_to mentor_show_path(mentor) do %>
+                <h2 class="mentor-name js-mentor-name ellipsis"><%= mentor.name %></h2>
+              <% end %>
+              <p class="mentor-skills js-mentor-skills ellipsis"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
+              <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
             </div>
             <div class="card__back">
-              <p>ON BACK</p>
+              <a href="">GitHub</a>
+              <a href="">Twitter</a>
+              <a href="">LinkedIn</a>
+              <a href="">Dribbble</a>
             </div>
           </div>
         <% end %>
-      </ul>
+      </div>
       <ul class="pagination">
       </ul>
     </div>

@@ -326,61 +326,19 @@ textarea:focus {
     height: 95px;
     width: auto; }
 
-.mentor-card {
-  background: #3269a8;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  float: left;
-  margin: 0 0 2em 3%;
-  padding: 2.5em 1em 1.5em 1em;
-  position: relative;
-  text-align: center;
-  width: 22.75%; }
-  .mentor-card:nth-of-type(4n+1) {
-    margin-left: 0; }
-  @media (max-width: 1000px) {
-    .mentor-card {
-      margin: 0 0 1.5em 3%;
-      width: 31.333%; }
-      .mentor-card:nth-of-type(4n+1) {
-        margin-left: 3%; }
-      .mentor-card:nth-of-type(3n+1) {
-        margin-left: 0; } }
-  @media (max-width: 750px) {
-    .mentor-card {
-      margin: 0 0 1em 3%;
-      width: 48.5%; }
-      .mentor-card:nth-of-type(4n+1), .mentor-card:nth-of-type(3n+1) {
-        margin-left: 3%; }
-      .mentor-card:nth-of-type(2n+1) {
-        margin-left: 0; } }
-  @media (max-width: 480px) {
-    .mentor-card {
-      width: 100%;
-      margin: 0 0 1em 0; }
-      .mentor-card:nth-of-type(4n+1), .mentor-card:nth-of-type(3n+1) {
-        margin-left: 0; } }
-  .mentor-card h2 {
-    font-weight: 500;
-    color: #fff;
-    margin: 1.5em 0 0.2em 0; }
-  .mentor-card .mentor-name {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%; }
-  .mentor-card .mentor-skills {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9em;
-    margin: 0.5em auto 0 auto;
-    width: 80%; }
-  .mentor-card .button {
-    margin-top: 2.5em; }
-
 .social-links {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
   position: absolute;
-  top: 1em;
-  right: 1.2em; }
+  top: 0;
+  right: 0;
+  padding: 1em;
+  line-height: 0.8em;
+  z-index: 100; }
+  .social-links:hover {
+    color: #fff;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease; }
 
 .mentor-profile {
   background: #3269a8; }

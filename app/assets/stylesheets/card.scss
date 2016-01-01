@@ -1,18 +1,101 @@
+// Color
+$darkest-blue: #11253A;
+$medium-blue: #0F3A6C;
+$button-blue: #3269a8;
+$text-white: #ffffff;
+$text-dark-blue: #122B48;
+$subtext-white: rgba(255, 255, 255, 0.5);
+$subtext-gray: #a3aaaf;
+
 .card {
-  position: relative;
   float: left;
-  padding-bottom: 25%;
-  width: 25%;
+  margin: 0 0 2em 3%;
+  padding: 2.5em 1em 1.5em 1em;
+  position: relative;
   text-align: center;
+  width: 22.75%;
+  min-height: 320px;
+  &:nth-of-type(4n+1) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 0 0 1.5em 3%;
+    width: 31.333%;
+    &:nth-of-type(4n+1) {
+      margin-left: 3%;
+    }
+    &:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 750px) {
+    margin: 0 0 1em 3%;
+    width: 48.5%;
+    &:nth-of-type(4n+1),
+    &:nth-of-type(3n+1) {
+      margin-left: 3%;
+    }
+    &:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+    margin: 0 0 1em 0;
+    &:nth-of-type(4n+1),
+    &:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+    color: #fff;
+    margin: 1.5em 0 0.2em 0;
+  }
+  .mentor-name {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .mentor-skills {
+    color: $subtext-white;
+    font-size: 0.9em;
+    margin: 0.5em auto 0 auto;
+    width: 80%;
+  }
+  .button {
+    margin-top: 2.5em;
+  }
+}
+
+.card__front {
+  background: $button-blue;
+}
+
+.card__back {
+  background: #28405A;
+  a {
+    color: #fff;
+    display: block;
+    font-size: 1.2em;
+    padding: 0.4em 0;
+  }
 }
 
 .card__front,
 .card__back {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 2.5em 1em 1.5em 1em;
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: 100%;
 }
 
 .card__front,
@@ -23,12 +106,7 @@
           transition: transform 0.3s;
 }
 
-.card__front {
-  background-color: #ff5078;
-}
-
 .card__back {
-  background-color: #1e1e1e;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
 }
