@@ -340,30 +340,23 @@ textarea:focus {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease; }
 
-.mentor-profile {
-  background: #3269a8; }
-  .mentor-profile .container {
-    background: transparent;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    max-width: 840px; }
-    .mentor-profile .container.blue {
-      background: #0f3a6c; }
-  .mentor-profile h1 {
-    color: #fff;
-    margin-bottom: 0.3em;
-    text-align: center; }
-  .mentor-profile .mentor-image-container {
-    height: 150px;
-    width: 150px; }
-    .mentor-profile .mentor-image-container img {
-      height: 150px; }
-
-.profile-header {
-  padding: 7em 0 2em 0;
-  margin-top: -7em;
-  min-height: 100vh; }
+.mentor-profile .container {
+  background: transparent;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  max-width: 840px; }
+  .mentor-profile .container.blue {
+    background: #0f3a6c; }
+.mentor-profile h1 {
+  color: #fff;
+  margin-bottom: 0.3em;
+  text-align: center; }
+.mentor-profile .mentor-image-container {
+  height: 150px;
+  width: 150px; }
+  .mentor-profile .mentor-image-container img {
+    height: 150px; }
 
 .mentor-photo {
   width: 95px; }

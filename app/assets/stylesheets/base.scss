@@ -397,7 +397,6 @@ textarea:focus {
 // Mentor Profile
 
 .mentor-profile {
-  background: $button-blue;
   .container {
     background: transparent;
     -moz-border-radius: 4px;
@@ -418,12 +417,6 @@ textarea:focus {
     width: 150px;
     img { height: 150px; }
   }
-}
-
-.profile-header {
-  padding: 7em 0 2em 0;
-  margin-top: -7em;
-  min-height: 100vh;
 }
 
 .mentor-photo {
