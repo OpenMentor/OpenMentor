@@ -17,10 +17,12 @@
         </div>
       <% end %>
 
-      <p class="update-button"><%= submit_tag "Update" %></p>
+      <div class="action-buttons">
+        <p><%= link_to "Cancel", :back, :class => "button secondary" %></p>
+        <p><%= submit_tag "Update" %></p>
+      </div>
 
     <% end %>
 
-    <%= link_to "Cancel", :back, :class => "button secondary small" %>
   </div>
 </div>

@@ -117,7 +117,7 @@ a.button, .button, input[type=submit] {
   color: $text-white;
   display: inline-block;
   font-weight: 500;
-  padding: 0.5em 2em 0.6em 2em;
+  padding: 0.6em 2em;
   text-align: center;
   &:hover {
     background: lighten($button-blue, 3%);
@@ -173,6 +173,17 @@ label {
 
 .field { margin-bottom: 1em; }
 .actions { margin-bottom: 2em; }
+
+.action-buttons {
+  margin: 2em auto 0 auto;
+  p {
+    margin-left: 0.5em;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
 
 .field_with_errors {
   display: inline;
@@ -429,10 +440,6 @@ textarea:focus {
   text-align: center;
   .container { max-width: 800px; }
   .field { display: inline; }
-  .update-button {
-    margin: 2em auto 0 auto;
-    max-width: 30%;
-  }
   input[type="checkbox"] {
     position: absolute;
     opacity: 0;

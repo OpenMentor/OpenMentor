@@ -87,7 +87,7 @@ a.button, .button, input[type=submit] {
   color: white;
   display: inline-block;
   font-weight: 500;
-  padding: 0.5em 2em 0.6em 2em;
+  padding: 0.6em 2em;
   text-align: center; }
   a.button:hover, .button:hover, input[type=submit]:hover {
     background: #3670b4;
@@ -133,6 +133,14 @@ label {
 
 .actions {
   margin-bottom: 2em; }
+
+.action-buttons {
+  margin: 2em auto 0 auto; }
+  .action-buttons p {
+    margin-left: 0.5em;
+    display: inline-block; }
+    .action-buttons p:first-child {
+      margin-left: 0; }
 
 .field_with_errors {
   display: inline; }
@@ -352,9 +360,6 @@ textarea:focus {
     max-width: 800px; }
   .select-skills .field {
     display: inline; }
-  .select-skills .update-button {
-    margin: 2em auto 0 auto;
-    max-width: 30%; }
   .select-skills input[type="checkbox"] {
     position: absolute;
     opacity: 0; }
