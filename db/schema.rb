@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230234606) do
+ActiveRecord::Schema.define(version: 20160101004303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "day",        null: false
+    t.time     "start",      null: false
+    t.time     "end",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mentor_skills", force: :cascade do |t|
     t.integer  "mentor_id",  null: false
