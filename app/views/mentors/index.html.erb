@@ -1,30 +1,32 @@
 <%= render "layouts/header" %>
 
-
-
-  <div class="mentors">
-    <div class="container">
-      <div id="js-list">
-        <%= text_field_tag 'skill search', nil, placeholder: 'Search skills', class: 'search' %>
-        <button class="button sort" data-sort="js-mentor-name">Sort by name</button>
-        <ul class="mentor-list list">
-          <% @mentors.each do |mentor| %>
-            <li class="mentor-card">
-              <a href="" class="social-links"><i class="icon-dot-3"></i></a>
-              <%= link_to mentor_show_path(mentor) do %>
-                <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
-                <h2 class="js-mentor-name"><%= mentor.name %></h2>
-              <% end %>
-              <p class="mentor-skills js-mentor-skills"><%= mentor.skills.map(&:name).join(", ") %></p>
-              <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
-            </li>
-          <% end %>
-        </ul>
-        <ul class="pagination">
-        </ul>
+<div class="mentors">
+  <div class="container">
+    <div id="js-list">
+      <div class="search-container">
+        <div class="skill-search">
+          <input type="text" placeholder="Search skills" class="search" id="search">
+          <span class="sort" data-sort="js-mentor-name">Sort by name</span>
+        </div>
       </div>
+      <ul class="mentor-list list">
+        <% @mentors.each do |mentor| %>
+          <li class="mentor-card">
+            <a href="" class="social-links"><i class="icon-dot-3"></i></a>
+            <%= link_to mentor_show_path(mentor) do %>
+              <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
+              <h2 class="js-mentor-name"><%= mentor.name %></h2>
+            <% end %>
+            <p class="mentor-skills js-mentor-skills"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
+            <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="pagination">
+      </ul>
     </div>
   </div>
+</div>
 
 <script>
 var options = {

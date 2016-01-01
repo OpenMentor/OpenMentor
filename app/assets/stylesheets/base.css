@@ -157,6 +157,18 @@ input {
   padding: 0.6em;
   width: 100%; }
 
+::-webkit-input-placeholder {
+  color: #a3aaaf; }
+
+:-moz-placeholder {
+  color: #a3aaaf; }
+
+::-moz-placeholder {
+  color: #a3aaaf; }
+
+:-ms-input-placeholder {
+  color: #a3aaaf; }
+
 .inline {
   display: inline-block; }
 
@@ -214,6 +226,34 @@ textarea:focus {
 
 .mentors .container {
   padding: 2em 0; }
+
+.skill-search {
+  margin: 0 auto 3em auto;
+  text-align: center; }
+  .skill-search input[type=text] {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: white;
+    max-width: 500px;
+    padding: 1em 2em; }
+    .skill-search input[type=text]:focus {
+      color: #fff; }
+  .skill-search ::-webkit-input-placeholder {
+    color: #fff; }
+  .skill-search :-moz-placeholder {
+    color: #fff; }
+  .skill-search ::-moz-placeholder {
+    color: #fff; }
+  .skill-search :-ms-input-placeholder {
+    color: #fff; }
+  .skill-search .sort {
+    cursor: pointer;
+    padding: 0 1em; }
+    .skill-search .sort:hover {
+      color: rgba(255, 255, 255, 0.5); }
 
 .mentor-list {
   list-style: none;
