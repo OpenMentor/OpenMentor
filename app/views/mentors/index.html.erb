@@ -15,7 +15,7 @@
                 <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
                 <h2 class="js-mentor-name"><%= mentor.name %></h2>
               <% end %>
-              <p class="mentor-skills js-mentor-skills"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
+              <p class="mentor-skills js-mentor-skills"><%= mentor.skills.map(&:name).join(", ") %></p>
               <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
             </li>
           <% end %>
