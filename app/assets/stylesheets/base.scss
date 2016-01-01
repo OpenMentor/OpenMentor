@@ -308,6 +308,7 @@ textarea:focus {
     margin-bottom: 2em;
   }
 }
+
 .skill-search {
   text-align: center;
   input[type=text] {
@@ -318,7 +319,7 @@ textarea:focus {
     border-radius: 50px;
     color: $text-white;
     max-width: 500px;
-    padding: 1em 2em;
+    padding: 1em 2em 1em 3.5em;
     &:focus { color: #fff; }
     @media (max-width: 750px) {
       width: 100%;
@@ -339,6 +340,17 @@ textarea:focus {
       padding: 1em 1em 0 1em;
       width: 100%;
     }
+  }
+}
+
+.search-wrapper {
+  position: relative;
+  .icon-search {
+    color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 1.2em;
+    top: 0.15em;
+    font-size: 1.2em;
   }
 }
 

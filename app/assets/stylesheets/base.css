@@ -271,7 +271,7 @@ textarea:focus {
     border-radius: 50px;
     color: white;
     max-width: 500px;
-    padding: 1em 2em; }
+    padding: 1em 2em 1em 3.5em; }
     .skill-search input[type=text]:focus {
       color: #fff; }
     @media (max-width: 750px) {
@@ -295,6 +295,15 @@ textarea:focus {
       .skill-search .sort {
         padding: 1em 1em 0 1em;
         width: 100%; } }
+
+.search-wrapper {
+  position: relative; }
+  .search-wrapper .icon-search {
+    color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 1.2em;
+    top: 0.15em;
+    font-size: 1.2em; }
 
 .mentor-list {
   list-style: none;
