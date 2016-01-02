@@ -18,7 +18,7 @@ class MentorsController < ApplicationController
       flash[:notice] = success_update_message
       redirect_to mentor_show_path(current_mentor)
     else
-      flash[:alert] = current_mentor.errors.full_messages.join(", ")
+      flash[:alert] = current_mentor.errors.full_messages
       redirect_to action: "edit"
     end
   end
