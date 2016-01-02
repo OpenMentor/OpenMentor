@@ -2,13 +2,13 @@ module Mentors
   class AvailabilitiesController < ApplicationController
     def index
       @days = Availability.days.keys
-      @availabilities = current_mentor.availabilities
+      @availabilities = mentor.availabilities_by_day
     end
 
     private
 
     def mentor
-      Mentor.find(params[:id])
+      @mentor ||= Mentor.find(params[:id])
     end
   end
 end
