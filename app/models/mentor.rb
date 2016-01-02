@@ -12,6 +12,9 @@ class Mentor < ActiveRecord::Base
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
+  validates :time_zone, presence: true
+
+  validate :time_zone_valid
 
   has_many :skill_proposals, foreign_key: 'proposed_by'
   has_many :reviewed_skill_proposals, class_name: 'SkillProposal', foreign_key: 'reviewed_by'
@@ -22,4 +25,8 @@ class Mentor < ActiveRecord::Base
   # Paperclip settings
   has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/avatars/3.png"
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
+
+  def time_zone_valid
+    errors.add(:time_zone, "#{time_zone} is not a valid time zone!") unless ActiveSupport::TimeZone.new(time_zone)
+  end
 end
