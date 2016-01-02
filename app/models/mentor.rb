@@ -29,4 +29,13 @@ class Mentor < ActiveRecord::Base
   def time_zone_valid
     errors.add(:time_zone, "#{time_zone} is not a valid time zone") unless ActiveSupport::TimeZone.new(time_zone)
   end
+
+  def availabilities_by_day
+    availabilities.each_with_object({}) do |availability, availabilities|
+      availabilities[availability.day] ||= []
+      [*availability.start_hour..availability.end_hour].each do |hour|
+        availabilities[availability.day] << hour
+      end
+    end
+  end
 end
