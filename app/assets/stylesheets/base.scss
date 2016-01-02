@@ -262,8 +262,8 @@ textarea:focus {
 
 .form-logo {
   display: block;
-  margin: 0 auto 1.5em auto;
-  width: 110px;
+  margin: 0 auto 3em auto;
+  width: 120px;
 }
 
 .form-links {
@@ -278,7 +278,8 @@ textarea:focus {
 // Form Overrides
 .log-in,
 .sign-up,
-.confirm {
+.confirm,
+.unlock {
   input[type=text], input[type=password], input[type=email] {
     background: rgba(255, 255, 255, 0.04);
     color: $text-white;

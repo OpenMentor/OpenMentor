@@ -20,6 +20,6 @@ class Mentor < ActiveRecord::Base
   has_many :availabilities
 
   # Paperclip settings
-  has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/:style/missing.png"
+  has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/avatars/3.png"
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
 end

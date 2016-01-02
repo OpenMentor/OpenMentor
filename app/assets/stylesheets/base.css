@@ -215,8 +215,8 @@ textarea:focus {
 
 .form-logo {
   display: block;
-  margin: 0 auto 1.5em auto;
-  width: 110px; }
+  margin: 0 auto 3em auto;
+  width: 120px; }
 
 .form-links {
   text-align: center; }
@@ -231,7 +231,10 @@ textarea:focus {
 .sign-up input[type=email],
 .confirm input[type=text],
 .confirm input[type=password],
-.confirm input[type=email] {
+.confirm input[type=email],
+.unlock input[type=text],
+.unlock input[type=password],
+.unlock input[type=email] {
   background: rgba(255, 255, 255, 0.04);
   color: white; }
 .log-in input[type=text]:focus,
@@ -245,7 +248,11 @@ textarea:focus {
 .confirm input[type=text]:focus,
 .confirm input[type=password]:focus,
 .confirm input[type=email]:focus,
-.confirm textarea:focus {
+.confirm textarea:focus,
+.unlock input[type=text]:focus,
+.unlock input[type=password]:focus,
+.unlock input[type=email]:focus,
+.unlock textarea:focus {
   border: 1px solid rgba(255, 255, 255, 0.06); }
 
 .edit-profile,

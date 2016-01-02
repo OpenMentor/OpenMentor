@@ -17,9 +17,9 @@
           <div class="card effect__click">
             <div class="card__front">
               <span class="social-links"><i class="icon-dot-3"></i></span>
-              <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:medium), class: "mentor-photo" %></div>
+              <div class="mentor-image-container"><%= image_tag "/assets/avatars/#{rand(23)}.png", class: "mentor-photo" %></div>
               <%= link_to mentor_show_path(mentor) do %>
-                <h2 class="mentor-name js-mentor-name ellipsis"><%= mentor.name %></h2>
+                <h2 class="mentor-name js-mentor-name ellipsis" title="<%= mentor.name %>" alt="<%= mentor.name %>"><%= mentor.name %></h2>
               <% end %>
               <p class="mentor-skills js-mentor-skills ellipsis"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
               <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
