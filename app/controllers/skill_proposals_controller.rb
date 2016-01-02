@@ -12,7 +12,7 @@ class SkillProposalsController < ApplicationController
       flash[:notice] = success_proposal_message
       redirect_to root_path
     else
-      flash[:alert] = skill_proposal.errors
+      flash[:alert] = skill_proposal.errors.full_messages
       redirect_to action: "new"
     end
   end

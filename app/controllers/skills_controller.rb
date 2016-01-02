@@ -13,7 +13,7 @@ class SkillsController < ApplicationController
       flash[:notice] = success_skill_message
       redirect_to root_path
     else
-      flash[:error] = skill.errors
+      flash[:error] = skill.errors.full_messages
       redirect_to action: "new"
     end
   end
