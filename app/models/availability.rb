@@ -12,8 +12,8 @@ class Availability < ActiveRecord::Base
   belongs_to :mentor
 
   validates :mentor_id, presence: true
-  validates :start, presence: true
-  validates :end, presence: true
+  validates :start_hour, presence: true
+  validates :end_hour, presence: true
   validates :day, presence: true
 
   scope :for_mentor, ->(mentor) { where(mentor: mentor) }
