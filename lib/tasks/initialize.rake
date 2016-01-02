@@ -50,7 +50,7 @@ namespace :initialize do
           name: mentor_name,
           email: email,
           password: "password",
-          time_zone: ActiveSupport::TimeZone.all.sample.name,
+          time_zone: ActiveSupport::TimeZone.us_zones.sample.name,
         )
       rescue ActiveRecord::RecordInvalid
       end
@@ -75,7 +75,22 @@ namespace :initialize do
     end
   end
 
-  def seed_availabilties
+  def seed_availabilities
+    puts "Creating the following mentor availabilities:"
+    Mentor.all.each do |mentor|
+      puts "For #{mentor.name}"
+      5.times do |n|
+        day = Availability.days.keys.sample
+        start_hour = [*8..20].sample
+        end_hour = start_hour + [*1..3].sample
+        Availability.create!(
+          mentor: mentor,
+          start_hour: start_hour,
+          end_hour: end_hour,
+          day: day
+        )
+      end
+    end
   end
 
   initialize_load_path
