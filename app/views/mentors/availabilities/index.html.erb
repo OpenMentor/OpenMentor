@@ -1,8 +1,12 @@
-<h3>HERE</h3>
+<h3><%= @mentor.name %> Availability</h3>
+
+<p>mentor: <%= @mentor.time_zone %></p>
+<p>current mentor: <%= current_mentor.time_zone %></p>
 
 <table>
   <thead>
     <tr>
+      <th></th>
       <% @days.each do |day| %>
         <th><%= day.capitalize %></th>
       <% end %>
@@ -15,11 +19,10 @@
       <tr>
         <td><%= current_time.strftime("%H:%M") %></td>
         <% @days.each do |day| %>
-          <%= require 'pry'; binding.pry %>
-          <% if @availabilities.where(start: current_time, day: day).any? %>
-            <td>Available</td>
+          <% if @availabilities[day] && @availabilities[day].include?(current_time.hour) %>
+            <td class="available">[++]</td>
           <% else %>
-            <td></td>
+            <td class="unavailable">--</td>
           <% end %>
         <% end %>
       </tr>
