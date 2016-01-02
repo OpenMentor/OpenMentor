@@ -11,7 +11,9 @@
 <body>
   <% %w(notice alert).each do |flash_message| %>
     <% if flash[flash_message] %>
-      <p class="<%= flash_message %>"><%= flash[flash_message] %></p>
+      <% [flash[flash_message]].flatten.each do |message| %>
+        <p class="<%= flash_message %>"><%= message %></p>
+      <% end %>
     <% end %>
   <% end %>
   <%= yield %>
