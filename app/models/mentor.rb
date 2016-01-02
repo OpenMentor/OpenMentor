@@ -27,6 +27,6 @@ class Mentor < ActiveRecord::Base
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
 
   def time_zone_valid
-    errors.add(:time_zone, "#{time_zone} is not a valid time zone!") unless ActiveSupport::TimeZone.new(time_zone)
+    errors.add(:time_zone, "#{time_zone} is not a valid time zone") unless ActiveSupport::TimeZone.new(time_zone)
   end
 end

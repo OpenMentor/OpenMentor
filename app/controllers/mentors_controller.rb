@@ -18,7 +18,7 @@ class MentorsController < ApplicationController
       flash[:notice] = success_update_message
       redirect_to mentor_show_path(current_mentor)
     else
-      flash[:alert] = current_mentor.errors
+      flash[:alert] = current_mentor.errors.full_messages.join(", ")
       redirect_to action: "edit"
     end
   end
@@ -32,6 +32,6 @@ class MentorsController < ApplicationController
   def member_params
     params.
       require(:mentor).
-      permit(:name, :profile_picture)
+      permit(:name, :profile_picture, :time_zone)
   end
 end
