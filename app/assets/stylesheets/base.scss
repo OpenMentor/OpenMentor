@@ -1,11 +1,4 @@
-// Color
-$darkest-blue: #11253A;
-$medium-blue: #1C497F;
-$button-blue: #3269a8;
-$text-white: #ffffff;
-$text-dark-blue: #11253A;
-$subtext-white: rgba(255, 255, 255, 0.5);
-$subtext-gray: #a3aaaf;
+@import "colors";
 
 // Layout
 
@@ -28,8 +21,7 @@ $subtext-gray: #a3aaaf;
 
 // Typography
 body {
-  background: $darkest-blue;
-  background: linear-gradient($darkest-blue, #193048);
+  background: $primary-blue;
   color: $text-white;
   font-family: "brandon-grotesque",sans-serif;
   font-style: normal;
@@ -67,7 +59,7 @@ a {
   color: $subtext-white;
   text-decoration: none;
   &:hover {
-    color: #fff;
+    color: $text-white;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
@@ -94,7 +86,7 @@ em {
     margin: 0;
     padding: 0.3em 0;
     a {
-      color: #fff;
+      color: $text-white;
       &:hover {
         color: rgba(255, 255, 255, 0.8);
       }
@@ -107,7 +99,7 @@ em {
       margin: 0;
     }
     .mentor-name {
-      color: #fff;
+      color: $text-white;
       margin-right: 1em;
     }
   }
@@ -115,8 +107,8 @@ em {
 
 // Modules
 a.button, .button, input[type=submit] {
-  background: $button-blue;
-  border: none;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
@@ -126,7 +118,8 @@ a.button, .button, input[type=submit] {
   padding: 0.6em 2em;
   text-align: center;
   &:hover {
-    background: lighten($button-blue, 3%);
+    background: $text-white;
+    color: $primary-blue;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
@@ -137,13 +130,9 @@ a.button, .button, input[type=submit] {
     padding: 0.4em 1.2em 0.3em 1.2em;
     font-size: 0.9em;
   }
-  &.secondary {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    &:hover {
-      background: #fff;
-      color: $button-blue;
-    }
+  &.fill {
+    background: $text-white;
+    color: $primary-blue;
   }
 }
 
@@ -170,7 +159,7 @@ a.button, .button, input[type=submit] {
     }
     &.active a {
       color: $darkest-blue;
-      background: #fff;
+      background: $text-white;
     }
   }
 }
@@ -178,8 +167,8 @@ a.button, .button, input[type=submit] {
 // Alerts
 
 .alert, .notice, .devise-alert {
-  background: $button-blue;
-  color: #fff;
+  background: $primary-blue;
+  color: $text-white;
   margin: 0;
   padding: 1em 2em;
   text-align: center;
@@ -281,14 +270,15 @@ textarea:focus {
 .confirm,
 .unlock {
   input[type=text], input[type=password], input[type=email] {
-    background: rgba(255, 255, 255, 0.04);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     color: $text-white;
   }
   input[type=text]:focus,
   input[type=password]:focus,
   input[type=email]:focus,
   textarea:focus {
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -321,15 +311,15 @@ textarea:focus {
     color: $text-white;
     max-width: 500px;
     padding: 1em 2em 1em 3.5em;
-    &:focus { color: #fff; }
+    &:focus { color: $text-white; }
     @media (max-width: 750px) {
       width: 100%;
     }
   }
-  ::-webkit-input-placeholder { color: #fff; }
-  :-moz-placeholder { color: #fff; }
-  ::-moz-placeholder { color: #fff; }
-  :-ms-input-placeholder { color: #fff; }
+  ::-webkit-input-placeholder { color: $text-white; }
+  :-moz-placeholder { color: $text-white; }
+  ::-moz-placeholder { color: $text-white; }
+  :-ms-input-placeholder { color: $text-white; }
   .sort {
     display: inline-block;
     cursor: pointer;
@@ -369,7 +359,6 @@ textarea:focus {
   box-sizing: content-box;
   border-radius: 50%;
   margin: 0 auto;
-  overflow: hidden;
   height: 95px;
   width: 95px;
   img {
@@ -389,7 +378,7 @@ textarea:focus {
   line-height: 0.8em;
   z-index: 100;
   &:hover {
-    color: #fff;
+    color: $text-white;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
@@ -409,14 +398,38 @@ textarea:focus {
     }
   }
   h1 {
-    color: #fff;
+    color: $text-white;
     margin-bottom: 0.3em;
     text-align: center;
   }
   .mentor-image-container {
-    height: 150px;
-    width: 150px;
-    img { height: 150px; }
+    height: 110px;
+    width: 110px;
+    img { height: 110px; }
+  }
+  .edit-profile-photo {
+    position: relative;
+    display: inline-block;
+    &:hover {
+      &:before {
+        border-radius: 50%;
+        background: $text-white;
+        content: "n";
+        color: $primary-blue;
+        font-family: open-mentor;
+        font-style: normal;
+        line-height: 1.7em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: block;
+        height: 1.6em;
+        width: 1.6em;
+        text-align: center;
+        -webkit-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+      }
+    }
   }
 }
 
@@ -463,7 +476,7 @@ textarea:focus {
 .mentor-photo-upload {
   background: transparent;
   border: none;
-  color: #fff;
+  color: $text-white;
   display: block;
   line-height: 1em;
   margin: 0 auto;
@@ -493,14 +506,14 @@ textarea:focus {
       text-align: center;
       &:hover, &:focus, &:active {
         cursor: pointer;
-        background-color: #fff;
+        background-color: $text-white;
         color: $darkest-blue;
       }
     }
     &:checked + label {
-      background-color: #fff;
+      background-color: $text-white;
       color: $darkest-blue;
-      &:hover, &:focus, &:active { background-color: #fff; }
+      &:hover, &:focus, &:active { background-color: $text-white; }
     }
   }
 }

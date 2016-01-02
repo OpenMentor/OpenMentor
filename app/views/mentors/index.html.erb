@@ -22,7 +22,7 @@
                 <h2 class="mentor-name js-mentor-name ellipsis" title="<%= mentor.name %>" alt="<%= mentor.name %>"><%= mentor.name %></h2>
               <% end %>
               <p class="mentor-skills js-mentor-skills ellipsis"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
-              <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small secondary" %>
+              <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small" %>
             </div>
             <div class="card__back">
               <span class="social-links"><i class="icon-dot-3"></i></span>
