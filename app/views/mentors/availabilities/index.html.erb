@@ -3,11 +3,14 @@
 <p>mentor: <%= @mentor.time_zone %></p>
 <p>current mentor: <%= current_mentor.time_zone %></p>
 
+<div class="inline">
+  <p>Mentor's view</p>
+  <% Time.zone = @mentor.time_zone %>
 <table>
   <thead>
     <tr>
       <th></th>
-      <% @days.each do |day| %>
+      <% days.each do |day| %>
         <th><%= day.capitalize %></th>
       <% end %>
     </tr>
@@ -18,14 +21,47 @@
       <% current_time = initial_time + hour.send(:hours) %>
       <tr>
         <td><%= current_time.strftime("%H:%M") %></td>
-        <% @days.each do |day| %>
-          <% if @availabilities[day] && @availabilities[day].include?(current_time.hour) %>
-            <td class="available">[++]</td>
+        <% days.each do |day| %>
+          <% if @original_availabilities[day] && @original_availabilities[day].include?(current_time.hour) %>
+            <td class="available"></td>
           <% else %>
-            <td class="unavailable">--</td>
+            <td class="unavailable"></td>
           <% end %>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+
+<div class="inline" style="margin-left: 20px;">
+<p>Current Mentor's time view</p>
+  <% Time.zone = current_mentor.time_zone %>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <% days.each do |day| %>
+        <th><%= day.capitalize %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% initial_time = Time.new('00:00') %>
+    <% 24.times do |hour| %>
+      <% time = Time.new(2015, 12, 12, hour, 0) %>
+      <% converted_time = time.in_time_zone(current_mentor.time_zone) %>
+      <tr>
+        <td><%= time.strftime("%H:%M") %></td>
+        <% days.each do |day| %>
+          <% if @availabilities[day] && @availabilities[day].include?(hour) %>
+            <td class="available"></td>
+          <% else %>
+            <td class="unavailable"></td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

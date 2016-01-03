@@ -19,6 +19,14 @@
   &:after { clear: both; }
 }
 
+.available {
+  background-color: white;
+}
+
+.unavailable {
+  background-color: blue;
+}
+
 // Typography
 body {
   background: $primary-blue;
