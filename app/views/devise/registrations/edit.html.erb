@@ -27,11 +27,11 @@
         <%= f.password_field :current_password, autocomplete: "off" %>
       </div>
 
-      <div class="actions">
+      <div class="action-buttons">
+        <%= link_to "Cancel", :back, :class => "button" %>
         <%= f.submit "Update", :class => "fill" %>
       </div>
     <% end %>
 
-    <%= link_to "Cancel", :back, :class => "button small" %>
   </div>
 </div>
