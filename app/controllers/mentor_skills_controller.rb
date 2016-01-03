@@ -20,11 +20,11 @@ class MentorSkillsController < ApplicationController
   private
 
   def update_success_message
-    "Your skills updated successfully!"
+    "Your skills updated successfully"
   end
 
   def update_error_message
-    "Something went wrong updating your skills, please try agai, please try again"
+    "Something went wrong updating your skills, please try again"
   end
 
   def create_new_mentor_skills!
