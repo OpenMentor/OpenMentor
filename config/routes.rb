@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 
   # Availabilities (scoped to Mentor)
   get 'mentor/:id/availabilities' => 'mentors/availabilities#index', as: :availabilities
+  get 'mentor/availabilities/edit' => 'mentors/availabilities#edit', as: :availabilities_edit
 end
