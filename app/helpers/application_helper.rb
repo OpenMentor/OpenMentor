@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def days
+  def weekdays
     Availability::WDAYS.keys
   end
 end

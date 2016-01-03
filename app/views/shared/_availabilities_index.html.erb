@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th></th>
-      <% days.each do |day| %>
+      <% weekdays.each do |day| %>
         <th><%= day.capitalize %></th>
       <% end %>
     </tr>
@@ -12,7 +12,7 @@
       <% time = Time.new(2015, 12, 12, hour, 0) %>
       <tr>
         <td><%= time.strftime("%H:%M") %></td>
-        <% days.each do |day| %>
+        <% weekdays.each do |day| %>
           <% if availabilities[day] && availabilities[day].include?(hour) %>
             <td class="available"></td>
           <% else %>
