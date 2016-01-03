@@ -18,11 +18,10 @@ ActiveRecord::Schema.define(version: 20160101043931) do
 
   create_table "availabilities", force: :cascade do |t|
     t.integer  "mentor_id"
-    t.integer  "day",        null: false
-    t.integer  "start_hour", null: false
-    t.integer  "end_hour",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "start",                  null: false
+    t.integer  "duration",   default: 1, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "mentor_skills", force: :cascade do |t|
