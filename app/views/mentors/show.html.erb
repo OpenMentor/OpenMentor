@@ -18,6 +18,10 @@
     <div class="container profile-bio">
       <h4>Time Zone</h4>
       <p><%= @mentor.time_zone %></p>
+      <h4>Availabilities</h4>
+      <%= link_to availabilities_path(@mentor) do %>
+        <%= render partial: "shared/availabilities_index", locals: { availabilities: @availabilities, hour_range: [*8..20] } %>
+      <% end %>
       <h4>Skills</h4>
       <% @mentor.skills.each do |skill| %>
         <p><%= skill.name %></p>

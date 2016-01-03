@@ -7,6 +7,7 @@ class MentorsController < ApplicationController
 
   def show
     @mentor = Mentor.find(params[:id])
+    @availabilities = @mentor.availabilities_by_day
   end
 
   def edit

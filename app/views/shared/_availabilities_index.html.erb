@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <% days.each do |day| %>
+        <th><%= day.capitalize %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% hour_range.each do |hour| %>
+      <% time = Time.new(2015, 12, 12, hour, 0) %>
+      <tr>
+        <td><%= time.strftime("%H:%M") %></td>
+        <% days.each do |day| %>
+          <% if availabilities[day] && availabilities[day].include?(hour) %>
+            <td class="available"></td>
+          <% else %>
+            <td class="unavailable"></td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
