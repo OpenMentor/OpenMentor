@@ -1,5 +1,5 @@
 class Availability < ActiveRecord::Base
-  enum day: {
+  WDAYS = {
     sunday: 0,
     monday: 1,
     tuesday: 2,
@@ -12,9 +12,8 @@ class Availability < ActiveRecord::Base
   belongs_to :mentor
 
   validates :mentor_id, presence: true
-  validates :start_hour, presence: true
-  validates :end_hour, presence: true
-  validates :day, presence: true
+  validates :start, presence: true
+  validates :duration, presence: true
 
   scope :for_mentor, ->(mentor) { where(mentor: mentor) }
 end
