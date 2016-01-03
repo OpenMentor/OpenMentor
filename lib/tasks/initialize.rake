@@ -79,15 +79,21 @@ namespace :initialize do
     puts "Creating the following mentor availabilities:"
     Mentor.all.each do |mentor|
       puts "For #{mentor.name}"
-      5.times do |n|
-        day = Availability.days.keys.sample
-        start_hour = [*8..20].sample
-        end_hour = start_hour + [*1..3].sample
+
+      Time.zone = mentor.time_zone
+
+      # January 4, 2015 = Sunday
+      # January 10, 2015 = Saturday
+      # This will create one availability for every weekday during
+      # the week of January 4 ~ January 10 2015
+      #
+      # These dates were arbitrarily chosen simply to provide development
+      # data and to ensure that a mentor has at least one availability per day
+      [*4..10].map do |day|
+        start_time = Time.zone.local(2015, 1, day, [*8..20].sample, 0, 0)
         Availability.create!(
           mentor: mentor,
-          start_hour: start_hour,
-          end_hour: end_hour,
-          day: day
+          start: start_time
         )
       end
     end
