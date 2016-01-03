@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   get 'skill_proposals/new' => 'skill_proposals#new', as: :skill_proposal_new
   put 'skill_proposals/create' => 'skill_proposals#create', as: :skill_proposal_create
 
-  # Availabilities (scoped to Mentor)
-  get 'mentor/:id/availabilities' => 'mentors/availabilities#index', as: :availabilities
+  # Availabilities (scoped to mentor)
+  get 'mentors/:id/availabilities' => 'mentors/availabilities#index', as: :availabilities
+
+  # Availabilities (for the current mentor)
   get 'mentor/availabilities/edit' => 'mentors/availabilities#edit', as: :availabilities_edit
+  patch 'mentor/availabilities/update' => 'mentors/availabilities#update', as: :availabilities_update
 end
