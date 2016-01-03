@@ -31,11 +31,28 @@ class Mentor < ActiveRecord::Base
   end
 
   def availabilities_by_day
+    # Danger! This method is short, but has large density.
+    #
+    # Time Zones are tricky. This method is designed to make
+    # maximum use of Ruby and ActiveSupport's built in time zone
+    # related helper methods.
+    #
+    # Before altering the behavior of this method, please ask
+    # yourself the following questions:
+    #
+    # 1. Do I fully understand the implications of making the proposed change?
+    # 2. Are all existing tests passing after making the change?
+    # 3. Do I have to alter existing tests to satisfy the change?
+    #
+    # If you answer no to any of the three questions above, it is probably
+    # a change that needs to be re-thought. Please open an issue or PR,
+    # start a conversation, and get more minds thinking about the proposal
+    # because "Time Zones Are Hard"    ^_____^v
+
+    inverted_days = Availability::WDAYS.invert
     availabilities.each_with_object({}) do |availability, availabilities|
-      availabilities[availability.day] ||= []
-      [*availability.start_hour..availability.end_hour].each do |hour|
-        availabilities[availability.day] << hour
-      end
+      availabilities[inverted_days[availability.start.wday]] ||= []
+      availabilities[inverted_days[availability.start.wday]] << availability.start.hour
     end
   end
 end
