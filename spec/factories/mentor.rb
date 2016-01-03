@@ -12,7 +12,8 @@ module Factories
         admin: options.fetch(:admin, false),
         name: options.fetch(:name, "Test"),
         email: options.fetch(:email, "#{SecureRandom.hex(10)}@test.com"),
-        password: options.fetch(:password, "#{SecureRandom.hex(10)}")
+        password: options.fetch(:password, "#{SecureRandom.hex(10)}"),
+        time_zone: options.fetch(:time_zone, ActiveSupport::TimeZone.us_zones.sample.name)
       )
     end
   end
