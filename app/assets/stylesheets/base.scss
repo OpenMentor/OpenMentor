@@ -46,11 +46,7 @@
     position: absolute;
     opacity: 0;
     & + label {
-      background: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      border-radius: 50px;
+      background: $soft-blue;
       color: $text-white;
       display: block;
       font-weight: 500;
@@ -68,6 +64,9 @@
       background-color: $green;
       color: $darkest-blue;
       &:hover, &:focus, &:active { background-color: $green; }
+    }
+    &:checked + label,
+    & + label:hover, & + label:focus, & + label:active {
       &:after {
         font-family: open-mentor;
         content: "s";
@@ -329,7 +328,7 @@ input {
 }
 
 .wide-button {
-  margin: 1em 0;
+  margin: 1em 0 2em 0;
   text-align: center;
 }
 

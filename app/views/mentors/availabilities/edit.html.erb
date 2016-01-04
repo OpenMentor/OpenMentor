@@ -1,7 +1,7 @@
 <%= render "layouts/header" %>
 
 <div class="container">
-  <h2 class="center">Availability for <%= current_mentor.name %></h2>
+  <h2 class="center">Edit Availability</h2>
   <div class="edit-availability">
     <%= form_for current_mentor, url: availabilities_update_path do |f| %>
       <div class="select-availability">
@@ -38,7 +38,7 @@
         </table>
 
         <div class="wide-button">
-          <%= f.submit "Update Availability" %>
+          <%= f.submit "Update Availability", :class => "button" %>
         </div>
       </div>
     <% end %>

@@ -1,6 +1,6 @@
 <%= render "layouts/header" %>
 
 <div class="container">
-  <h3><%= @mentor.name %> Availability</h3>
+  <h2 class="center">Availability for <%= @mentor.name %></h2>
   <%= render partial: "shared/availabilities_index", locals: { availabilities: @availabilities, hour_range: [*0..23] } %>
 </div>
