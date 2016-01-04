@@ -1,4 +1,4 @@
-<table>
+<table class="availability-chart">
   <thead>
     <tr>
       <th></th>
@@ -23,3 +23,8 @@
     <% end %>
   </tbody>
 </table>
+<div class="wide-button">
+  <%= link_to availabilities_path(@mentor) do %>
+    <button class="button">View 24 Hour Availability</button>
+  <% end %>
+</div>

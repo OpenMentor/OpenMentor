@@ -19,12 +19,78 @@
   &:after { clear: both; }
 }
 
+.availability-chart {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  *border-collapse: expression('separate', cellSpacing = '8px');
+  td {
+    height: 26px;
+    width: 12%;
+  }
+}
+
+.edit-availability {
+  table {
+    border-collapse: separate;
+    border-spacing: 8px;
+    *border-collapse: expression('separate', cellSpacing = '8px');
+    width: 100%;
+  }
+  td {
+    height: 26px;
+    width: 12%;
+    position: relative;
+  }
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+      color: $text-white;
+      display: block;
+      font-weight: 500;
+      padding: 0.7em 2em;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      &:hover, &:focus, &:active {
+        cursor: pointer;
+        background-color: $green;
+        color: $darkest-blue;
+      }
+    }
+    &:checked + label {
+      background-color: $green;
+      color: $darkest-blue;
+      &:hover, &:focus, &:active { background-color: $green; }
+      &:after {
+        font-family: open-mentor;
+        content: "s";
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 26px;
+        padding: 0.1em 0;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
 .available {
-  background-color: white;
+  background-color: $green;
 }
 
 .unavailable {
-  background-color: blue;
+  background-color: $soft-blue;
 }
 
 // Typography
@@ -256,6 +322,15 @@ input {
 
 .inline {
   display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+.wide-button {
+  margin: 1em 0;
+  text-align: center;
 }
 
 input[type=checkbox] {

@@ -1,3 +1,6 @@
-<h3><%= @mentor.name %> Availability</h3>
+<%= render "layouts/header" %>
 
-<%= render partial: "shared/availabilities_index", locals: { availabilities: @availabilities, hour_range: [*0..23] } %>
+<div class="container">
+  <h3><%= @mentor.name %> Availability</h3>
+  <%= render partial: "shared/availabilities_index", locals: { availabilities: @availabilities, hour_range: [*0..23] } %>
+</div>

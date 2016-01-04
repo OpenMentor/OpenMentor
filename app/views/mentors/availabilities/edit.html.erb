@@ -1,37 +1,46 @@
-<%= form_for current_mentor, url: availabilities_update_path do |f| %>
-  <div class="select-skills">
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <% weekdays_column_headers.each do |abbreviation, full_name| %>
-            <th title="<%= full_name.capitalize %>"><%= abbreviation.capitalize %></th>
-          <% end %>
-        </tr>
-      </thead>
-      <tbody>
-        <% [*0..23].each do |hour| %>
-          <% time = Time.new(2015, 01, 04, hour, 0) %>
-          <tr>
-            <td><%= time.strftime("%H:%M") %></td>
-            <% weekdays.each do |day| %>
-              <% if @availabilities[day] && @availabilities[day].include?(hour) %>
-                <td>
-                  <%= check_box_tag "#{day}_#{hour}", hour, true, name: "availabilities[#{day}][]" %>
-                  <%= label_tag "#{day}_#{hour}", "" %>
-                </td>
-              <% else %>
-                <td>
-                  <%= check_box_tag "#{day}_#{hour}", hour, false, name: "availabilities[#{day}][]" %>
-                  <%= label_tag "#{day}_#{hour}", "" %>
-                </td>
-              <% end %>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+<%= render "layouts/header" %>
 
-    <%= f.submit "Update" %>
+<div class="container">
+  <h2 class="center">Availability for <%= current_mentor.name %></h2>
+  <div class="edit-availability">
+    <%= form_for current_mentor, url: availabilities_update_path do |f| %>
+      <div class="select-availability">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <% weekdays_column_headers.each do |abbreviation, full_name| %>
+                <th title="<%= full_name.capitalize %>"><%= abbreviation.capitalize %></th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% [*0..23].each do |hour| %>
+              <% time = Time.new(2015, 01, 04, hour, 0) %>
+              <tr>
+                <td><%= time.strftime("%H:%M") %></td>
+                <% weekdays.each do |day| %>
+                  <% if @availabilities[day] && @availabilities[day].include?(hour) %>
+                    <td>
+                      <%= check_box_tag "#{day}_#{hour}", hour, true, name: "availabilities[#{day}][]" %>
+                      <%= label_tag "#{day}_#{hour}", "" %>
+                    </td>
+                  <% else %>
+                    <td>
+                      <%= check_box_tag "#{day}_#{hour}", hour, false, name: "availabilities[#{day}][]" %>
+                      <%= label_tag "#{day}_#{hour}", "" %>
+                    </td>
+                  <% end %>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div class="wide-button">
+          <%= f.submit "Update Availability" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
