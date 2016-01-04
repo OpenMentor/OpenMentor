@@ -13,64 +13,6 @@
   .container:after {
     clear: both; }
 
-.availability-chart {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 8px;
-  *border-collapse: expression('separate', cellSpacing = '8px'); }
-  .availability-chart td {
-    height: 26px;
-    width: 12%; }
-
-.edit-availability table {
-  border-collapse: separate;
-  border-spacing: 8px;
-  *border-collapse: expression('separate', cellSpacing = '8px');
-  width: 100%; }
-.edit-availability td {
-  height: 26px;
-  width: 12%;
-  position: relative; }
-.edit-availability input[type="checkbox"] {
-  position: absolute;
-  opacity: 0; }
-  .edit-availability input[type="checkbox"] + label {
-    background: #4077b5;
-    color: white;
-    display: block;
-    font-weight: 500;
-    padding: 0.7em 2em;
-    text-align: center;
-    margin: 0 auto;
-    width: 90%; }
-    .edit-availability input[type="checkbox"] + label:hover, .edit-availability input[type="checkbox"] + label:focus, .edit-availability input[type="checkbox"] + label:active {
-      cursor: pointer;
-      background-color: #63bb8d;
-      color: #11253a; }
-  .edit-availability input[type="checkbox"]:checked + label {
-    background-color: #63bb8d;
-    color: #11253a; }
-    .edit-availability input[type="checkbox"]:checked + label:hover, .edit-availability input[type="checkbox"]:checked + label:focus, .edit-availability input[type="checkbox"]:checked + label:active {
-      background-color: #63bb8d; }
-  .edit-availability input[type="checkbox"]:checked + label:after, .edit-availability input[type="checkbox"] + label:hover:after, .edit-availability input[type="checkbox"] + label:focus:after, .edit-availability input[type="checkbox"] + label:active:after {
-    font-family: open-mentor;
-    content: "s";
-    color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 26px;
-    padding: 0.1em 0;
-    display: inline-block;
-    text-align: center;
-    width: 100%; }
-
-.available {
-  background-color: #63bb8d; }
-
-.unavailable {
-  background-color: #4077b5; }
-
 body {
   background: #3269a8;
   color: white;
@@ -202,6 +144,38 @@ a.button, .button, input[type=submit] {
   margin: 0;
   padding: 1em 2em;
   text-align: center; }
+
+.navigation {
+  float: left;
+  list-style: none;
+  padding: 1.5em 0;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%; }
+  @media (max-width: 750px) {
+    .navigation {
+      padding: 0; } }
+  .navigation li {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 1px; }
+    @media (max-width: 750px) {
+      .navigation li {
+        padding: 0.6em 0;
+        width: 100%; } }
+  .navigation a {
+    margin: 0 2em; }
+    @media (max-width: 750px) {
+      .navigation a {
+        margin: 0; } }
+    .navigation a.current {
+      border-bottom: 2px solid #fff;
+      color: #fff; }
+      @media (max-width: 750px) {
+        .navigation a.current {
+          border-bottom: none; } }
 
 *:focus {
   outline: none; }
@@ -538,6 +512,64 @@ textarea:focus {
       color: #11253a; }
       .select-skills input[type="checkbox"]:checked + label:hover, .select-skills input[type="checkbox"]:checked + label:focus, .select-skills input[type="checkbox"]:checked + label:active {
         background-color: white; }
+
+.availability-chart {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  *border-collapse: expression('separate', cellSpacing = '8px'); }
+  .availability-chart td {
+    height: 26px;
+    width: 12%; }
+
+.edit-availability table {
+  border-collapse: separate;
+  border-spacing: 8px;
+  *border-collapse: expression('separate', cellSpacing = '8px');
+  width: 100%; }
+.edit-availability td {
+  height: 26px;
+  width: 12%;
+  position: relative; }
+.edit-availability input[type="checkbox"] {
+  position: absolute;
+  opacity: 0; }
+  .edit-availability input[type="checkbox"] + label {
+    background: #4077b5;
+    color: white;
+    display: block;
+    font-weight: 500;
+    padding: 0.7em 2em;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%; }
+    .edit-availability input[type="checkbox"] + label:hover, .edit-availability input[type="checkbox"] + label:focus, .edit-availability input[type="checkbox"] + label:active {
+      cursor: pointer;
+      background-color: #63bb8d;
+      color: #11253a; }
+  .edit-availability input[type="checkbox"]:checked + label {
+    background-color: #63bb8d;
+    color: #11253a; }
+    .edit-availability input[type="checkbox"]:checked + label:hover, .edit-availability input[type="checkbox"]:checked + label:focus, .edit-availability input[type="checkbox"]:checked + label:active {
+      background-color: #63bb8d; }
+  .edit-availability input[type="checkbox"]:checked + label:after, .edit-availability input[type="checkbox"] + label:hover:after, .edit-availability input[type="checkbox"] + label:focus:after, .edit-availability input[type="checkbox"] + label:active:after {
+    font-family: open-mentor;
+    content: "s";
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    padding: 0.1em 0;
+    display: inline-block;
+    text-align: center;
+    width: 100%; }
+
+.available {
+  background-color: #63bb8d; }
+
+.unavailable {
+  background-color: #4077b5; }
 
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08); }

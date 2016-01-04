@@ -19,79 +19,6 @@
   &:after { clear: both; }
 }
 
-.availability-chart {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 8px;
-  *border-collapse: expression('separate', cellSpacing = '8px');
-  td {
-    height: 26px;
-    width: 12%;
-  }
-}
-
-.edit-availability {
-  table {
-    border-collapse: separate;
-    border-spacing: 8px;
-    *border-collapse: expression('separate', cellSpacing = '8px');
-    width: 100%;
-  }
-  td {
-    height: 26px;
-    width: 12%;
-    position: relative;
-  }
-  input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    & + label {
-      background: $soft-blue;
-      color: $text-white;
-      display: block;
-      font-weight: 500;
-      padding: 0.7em 2em;
-      text-align: center;
-      margin: 0 auto;
-      width: 90%;
-      &:hover, &:focus, &:active {
-        cursor: pointer;
-        background-color: $green;
-        color: $darkest-blue;
-      }
-    }
-    &:checked + label {
-      background-color: $green;
-      color: $darkest-blue;
-      &:hover, &:focus, &:active { background-color: $green; }
-    }
-    &:checked + label,
-    & + label:hover, & + label:focus, & + label:active {
-      &:after {
-        font-family: open-mentor;
-        content: "s";
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 26px;
-        padding: 0.1em 0;
-        display: inline-block;
-        text-align: center;
-        width: 100%;
-      }
-    }
-  }
-}
-
-.available {
-  background-color: $green;
-}
-
-.unavailable {
-  background-color: $soft-blue;
-}
-
 // Typography
 body {
   background: $primary-blue;
@@ -257,6 +184,43 @@ a.button, .button, input[type=submit] {
   text-align: center;
 }
 
+// Navigation
+.navigation {
+  float: left;
+  list-style: none;
+  padding: 1.5em 0;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  @media (max-width: 750px) {
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    @media (max-width: 750px) {
+      padding: 0.6em 0;
+      width: 100%;
+    }
+  }
+  a {
+    margin: 0 2em;
+    @media (max-width: 750px) {
+      margin: 0;
+    }
+    &.current {
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      @media (max-width: 750px) {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
 // Forms
 
 *:focus { outline: none; }
@@ -395,6 +359,7 @@ textarea:focus {
 }
 
 // Form Overrides
+
 .log-in,
 .sign-up,
 .confirm,
@@ -619,6 +584,79 @@ textarea:focus {
       &:hover, &:focus, &:active { background-color: $text-white; }
     }
   }
+}
+
+.availability-chart {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  *border-collapse: expression('separate', cellSpacing = '8px');
+  td {
+    height: 26px;
+    width: 12%;
+  }
+}
+
+.edit-availability {
+  table {
+    border-collapse: separate;
+    border-spacing: 8px;
+    *border-collapse: expression('separate', cellSpacing = '8px');
+    width: 100%;
+  }
+  td {
+    height: 26px;
+    width: 12%;
+    position: relative;
+  }
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      background: $soft-blue;
+      color: $text-white;
+      display: block;
+      font-weight: 500;
+      padding: 0.7em 2em;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      &:hover, &:focus, &:active {
+        cursor: pointer;
+        background-color: $green;
+        color: $darkest-blue;
+      }
+    }
+    &:checked + label {
+      background-color: $green;
+      color: $darkest-blue;
+      &:hover, &:focus, &:active { background-color: $green; }
+    }
+    &:checked + label,
+    & + label:hover, & + label:focus, & + label:active {
+      &:after {
+        font-family: open-mentor;
+        content: "s";
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 26px;
+        padding: 0.1em 0;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.available {
+  background-color: $green;
+}
+
+.unavailable {
+  background-color: $soft-blue;
 }
 
 // Footer
