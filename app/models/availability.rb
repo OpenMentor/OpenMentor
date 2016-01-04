@@ -1,4 +1,14 @@
 class Availability < ActiveRecord::Base
+  WDAYS_COLUMNS = {
+    su: "sunday",
+    mo: "monday",
+    tu: "tuesday",
+    we: "wednesday",
+    th: "thursday",
+    fr: "friday",
+    sa: "saturday"
+  }
+
   WDAYS = {
     sunday: 0,
     monday: 1,

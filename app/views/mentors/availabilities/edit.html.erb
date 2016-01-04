@@ -4,8 +4,8 @@
       <thead>
         <tr>
           <th></th>
-          <% weekdays.each do |day| %>
-            <th><%= day.capitalize %></th>
+          <% weekdays_column_headers.each do |abbreviation, full_name| %>
+            <th title="<%= full_name.capitalize %>"><%= abbreviation.capitalize %></th>
           <% end %>
         </tr>
       </thead>
