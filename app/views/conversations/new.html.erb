@@ -1,0 +1,26 @@
+<h1>New Conversation</h1>
+
+<%= form_tag(conversations_create_path, method: :put) do %>
+  <%= hidden_field_tag "sender_id", current_mentor.id %>
+
+  <% @receivers.each do |receiver| %>
+    <%= hidden_field_tag "receiver_ids[]", receiver.id %>
+  <% end %>
+
+  <div class="field">
+    <%= label_tag :to %>
+    <%= text_field_tag :to, @receivers.map(&:name).join(", "), { disabled: true } %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :subject %>
+    <%= text_field_tag :subject, "", placeholder: "Subject" %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :body %>
+    <%= text_area_tag :body, "", placeholder: "The start of every new conversation is the start of a new journey..." %>
+  </div>
+
+  <%= submit_tag "Send" %>
+<% end %>

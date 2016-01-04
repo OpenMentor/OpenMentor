@@ -1,0 +1,5 @@
+<h1>Conversations</h1>
+
+<% @conversations.each do |conversation| %>
+  <h3><%= link_to conversation.subject, conversations_show_path(conversation) %></h3>
+<% end %>

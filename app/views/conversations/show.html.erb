@@ -1,0 +1,10 @@
+<h2><%= @conversation.subject %></h2>
+
+<h3>Mentors</h3>
+<p><%= @conversation.mentors.map(&:name).join(", ") %></p>
+
+<% @conversation.messages.each do |message| %>
+  <p>Sender: <%= message.mentor.name %></p>
+  <p>Sent at: <%= message.sent_at %></p>
+  <p>Body: <%= message.body %></p>
+<% end %>
