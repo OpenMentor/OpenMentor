@@ -22,6 +22,9 @@ class Mentor < ActiveRecord::Base
   has_many :skills, through: :mentor_skills
   has_many :availabilities
 
+  has_and_belongs_to_many :conversations
+  has_many :messages, foreign_key: "sender_id"
+
   # Paperclip settings
   has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/avatars/3.png"
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
