@@ -248,7 +248,7 @@ input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0.6em;
+  padding: 0.6em 0.8em;
   width: 100%; }
 
 ::-webkit-input-placeholder {
@@ -272,6 +272,35 @@ input {
 .wide-button {
   margin: 1em 0 2em 0;
   text-align: center; }
+
+.select {
+  position: relative;
+  display: block; }
+  .select select {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0.6rem 2.25em 0.6rem 0.8em;
+    line-height: 1.5;
+    background-color: transparent;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  .select:after {
+    position: absolute;
+    top: 50%;
+    right: 1.8em;
+    display: inline-block;
+    content: "B";
+    font-family: open-mentor;
+    width: 0;
+    height: 0;
+    margin-top: -0.6rem;
+    pointer-events: none; }
 
 input[type=checkbox] {
   display: inline-block;

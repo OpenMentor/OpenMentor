@@ -17,7 +17,9 @@
 
       <div class="field">
         <%= f.label :time_zone, "Time Zone" %>
-        <%= f.select(:time_zone, ActiveSupport::TimeZone.us_zones.collect { |tz| tz.name }) %>
+        <div class="select">
+          <%= f.select(:time_zone, ActiveSupport::TimeZone.us_zones.collect { |tz| tz.name }) %>
+        </div>
       </div>
 
       <div class="actions">
