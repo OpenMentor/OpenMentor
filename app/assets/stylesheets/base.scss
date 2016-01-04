@@ -264,7 +264,7 @@ label {
   display: inline;
 }
 
-input {
+input, textarea {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.3);
   color: $text-white;
