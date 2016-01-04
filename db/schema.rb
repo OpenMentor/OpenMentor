@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160101043931) do
+ActiveRecord::Schema.define(version: 20160104030005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20160101043931) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "conversations", force: :cascade do |t|
+    t.text     "subject",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations_mentors", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "conversation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "conversations_mentors", ["conversation_id"], name: "index_conversations_mentors_on_conversation_id", using: :btree
+  add_index "conversations_mentors", ["mentor_id"], name: "index_conversations_mentors_on_mentor_id", using: :btree
 
   create_table "mentor_skills", force: :cascade do |t|
     t.integer  "mentor_id",  null: false
@@ -66,6 +82,15 @@ ActiveRecord::Schema.define(version: 20160101043931) do
   add_index "mentors", ["email"], name: "index_mentors_on_email", unique: true, using: :btree
   add_index "mentors", ["reset_password_token"], name: "index_mentors_on_reset_password_token", unique: true, using: :btree
   add_index "mentors", ["unlock_token"], name: "index_mentors_on_unlock_token", unique: true, using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "sender_id",       null: false
+    t.text     "body",            null: false
+    t.datetime "sent_at",         null: false
+    t.integer  "conversation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "skill_proposals", force: :cascade do |t|
     t.string   "name",        null: false
