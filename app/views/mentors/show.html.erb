@@ -21,6 +21,11 @@
       <p><%= @mentor.time_zone %></p>
       <h4>Availabilities</h4>
       <%= render partial: "shared/availabilities_index", locals: { availabilities: @availabilities, hour_range: [*8..20] } %>
+      <div class="wide-button">
+        <%= link_to availabilities_path(@mentor) do %>
+          <button class="button">View 24 Hour Availability</button>
+        <% end %>
+      </div>
       <h4>Skills</h4>
       <% @mentor.skills.each do |skill| %>
         <p><%= skill.name %></p>
