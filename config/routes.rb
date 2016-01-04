@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Mentors
   get 'mentors' => 'mentors#index', as: :mentors
-  get 'mentor/:id'  => 'mentors#show', as: :mentor_show
+  get 'mentors/:id'  => 'mentors#show', as: :mentor_show
 
   # Mentor Profile
   get 'profiles/edit' => 'mentors#edit', as: :mentor_edit
@@ -31,4 +31,10 @@ Rails.application.routes.draw do
   # Availabilities (for the current mentor)
   get 'mentor/availabilities/edit' => 'mentors/availabilities#edit', as: :availabilities_edit
   patch 'mentor/availabilities/update' => 'mentors/availabilities#update', as: :availabilities_update
+
+  # Conversations
+  get 'conversations' => 'conversations#index', as: :conversations
+  get 'conversations/new' => 'conversations#new', as: :conversations_new
+  get 'conversations/:id' => 'conversations#show', as: :conversations_show
+  put 'conversations/create' => 'conversations#create', as: :conversations_create
 end
