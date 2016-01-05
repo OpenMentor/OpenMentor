@@ -1,10 +1,20 @@
-<h2><%= @conversation.subject %></h2>
+<%= render "layouts/header" %>
 
-<h3>Mentors</h3>
-<p><%= @conversation.mentors.map(&:name).join(", ") %></p>
+<div class="container">
 
-<% @conversation.messages.each do |message| %>
-  <p>Sender: <%= message.mentor.name %></p>
-  <p>Sent at: <%= message.sent_at %></p>
-  <p>Body: <%= message.body %></p>
-<% end %>
+  <% @conversation.mentors.each do |mentor| %>
+    <% next if mentor == current_mentor %>
+    <%= link_to mentor_show_path(mentor) do %>
+      <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
+      <p><%= mentor.name %></p>
+    <% end %>
+  <% end %>
+
+  <h2><%= @conversation.subject %></h2>
+
+  <% @conversation.messages.order(created_at: :asc).each do |message| %>
+    <p>From: <%= message.mentor.name %></p>
+    <p>Sent at: <%= message.sent_at %></p>
+    <p><%= message.body %></p>
+  <% end %>
+</div>

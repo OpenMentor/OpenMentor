@@ -1,5 +1,25 @@
-<h1>Conversations</h1>
+<%= render "layouts/header" %>
 
-<% @conversations.each do |conversation| %>
-  <h3><%= link_to conversation.subject, conversations_show_path(conversation) %></h3>
-<% end %>
+<div class="container">
+  <h1>Conversations</h1>
+
+  <% @conversations.each do |conversation| %>
+    <div>
+      <div class="inline">
+        <% conversation.mentors.each do |mentor| %>
+          <% next if mentor == current_mentor %>
+          <%= link_to mentor_show_path(mentor) do %>
+            <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to conversations_show_path(conversation) do %>
+        <div class="inline">
+          <h3><%= conversation.subject %></h3>
+          <p><%= conversation.messages.order(created_at: :desc).first.body.truncate(60) %></p>
+          <p><%= pluralize(conversation.messages.count, 'message') %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
