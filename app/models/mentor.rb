@@ -29,6 +29,11 @@ class Mentor < ActiveRecord::Base
   has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/avatars/3.png"
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
 
+  def self.search(search_string)
+    (where(arel_table[:name].matches("#{search_string}%")) +
+      where(arel_table[:email].matches("#{search_string}%"))).uniq
+  end
+
   def time_zone_valid
     errors.add(:time_zone, "#{time_zone} is not a valid time zone") unless ActiveSupport::TimeZone.new(time_zone)
   end
