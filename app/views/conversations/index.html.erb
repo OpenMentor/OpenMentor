@@ -3,6 +3,8 @@
 <div class="container">
   <h1>Conversations</h1>
 
+  <p><%= link_to("New", conversations_new_path) %></p>
+
   <% @conversations.each do |conversation| %>
     <div>
       <div class="inline">
