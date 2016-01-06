@@ -10,7 +10,7 @@ class MentorSkillsController < ApplicationController
       create_new_mentor_skills!
       remove_old_mentor_skills!
       flash[:notice] = update_success_message
-      redirect_to mentor_show_path(current_mentor)
+      redirect_to mentors_show_path(current_mentor)
     rescue
       flash[:alert] = update_error_message
       redirect_to action: "edit"

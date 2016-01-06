@@ -57,7 +57,7 @@ describe Mentors::AvailabilitiesController do
       end
 
       it "redirects back to the mentor show page" do
-        expect(response).to redirect_to(mentor_show_path(@mentor))
+        expect(response).to redirect_to(mentors_show_path(@mentor))
       end
 
       it "sets a flash notice" do

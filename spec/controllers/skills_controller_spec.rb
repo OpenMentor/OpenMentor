@@ -76,7 +76,7 @@ describe SkillsController do
     end
 
     it "redirects to new" do
-      expect(@result).to redirect_to(skill_new_path)
+      expect(@result).to redirect_to(skills_new_path)
     end
   end
 end

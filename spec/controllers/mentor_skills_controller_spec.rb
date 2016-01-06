@@ -18,7 +18,7 @@ describe MentorSkillsController do
     end
 
     it "redirects to the mentor skill index" do
-      expect(response).to redirect_to(mentor_show_path(mentor))
+      expect(response).to redirect_to(mentors_show_path(mentor))
     end
 
     it "sets a success message" do

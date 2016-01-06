@@ -18,11 +18,11 @@
             <div class="card__front">
               <span class="social-links"><i class="icon-dot-3"></i></span>
               <div class="mentor-image-container"><%= image_tag "/assets/avatars/#{rand(23)}.png", class: "mentor-photo" %></div>
-              <%= link_to mentor_show_path(mentor) do %>
+              <%= link_to mentors_show_path(mentor) do %>
                 <h2 class="mentor-name js-mentor-name ellipsis" title="<%= mentor.name %>" alt="<%= mentor.name %>"><%= mentor.name %></h2>
               <% end %>
               <p class="mentor-skills js-mentor-skills ellipsis"><%= Skill.all.sample.name %>, <%= Skill.all.sample.name %>, <%= Skill.all.sample.name %></p>
-              <%= link_to "View Profile", mentor_show_path(mentor), class: "button x-small" %>
+              <%= link_to "View Profile", mentors_show_path(mentor), class: "button x-small" %>
             </div>
             <div class="card__back">
               <span class="social-links"><i class="icon-dot-3"></i></span>
