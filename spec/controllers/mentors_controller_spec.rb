@@ -60,7 +60,7 @@ describe MentorsController do
       end
 
       it "redirects back to the mentor show page" do
-        expect(response).to redirect_to(mentor_show_path(mentor))
+        expect(response).to redirect_to(mentors_show_path(mentor))
       end
     end
 
@@ -77,7 +77,43 @@ describe MentorsController do
       end
 
       it "redirects to the edit page" do
-        expect(response).to redirect_to(mentor_edit_path)
+        expect(response).to redirect_to(mentors_edit_path)
+      end
+    end
+  end
+
+  context "search" do
+    before do
+      @name1   = "Stephanie Briones"
+      @name2   = "Steven Colbert"
+      @name3   = "Barack Obama"
+      @email1  = "stephanie@briones.com"
+      @email2  = "steven@colbert.com"
+      @email3  = "president@whitehouse.com"
+      @mentor1 = Factories::Mentor.create!(name: @name1, email: @email1)
+      @mentor2 = Factories::Mentor.create!(name: @name2, email: @email2)
+      @mentor3 = Factories::Mentor.create!(name: @name3, email: @email3)
+    end
+
+    it "returns a json formatted name and email address when a successful match is made via name" do
+      as_mentor do
+        get :search, search: "Stephanie", format: :json
+        expect(response.body).to eq(JSON.generate(@mentor1.id => {name: @name1, email: @email1}))
+      end
+    end
+
+    it "returns a json formatted collection of names and email addresses when a search query matches against multiple mentors" do
+      as_mentor do
+        get :search, search: "Ste", format: :json
+        expect(response.body).to eq(JSON.generate(@mentor1.id => {name: @name1, email: @email1},
+                                                  @mentor2.id => {name: @name2, email: @email2}))
+      end
+    end
+
+    it "returns a mentor when search string only matches against an email address" do
+      as_mentor do
+        get :search, search: "pres", format: :json
+        expect(response.body).to eq(JSON.generate(@mentor3.id => {name: @mentor3.name, email: @mentor3.email}))
       end
     end
   end
