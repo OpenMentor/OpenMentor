@@ -1,5 +1,21 @@
 @import "colors";
 
+// Inbox
+p {
+  .to-mentor {
+    display: inline-block;
+    color: #222;
+    margin: 2px 5px;
+    max-width: 325px;
+    max-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+    cursor: move;
+  }
+}
+
+
 // Layout
 
 *, *:before, *:after {

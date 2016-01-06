@@ -7,9 +7,14 @@
     <%= hidden_field_tag "receiver_ids[]", receiver.id %>
   <% end %>
 
+
   <div class="field">
     <%= label_tag :to %>
-    <%= text_field_tag :to, @receivers.map(&:name).join(", "), { disabled: true } %>
+    <span>To:</span>
+    <% @receivers.each do |receiver| %>
+      <p class="to-mentor"><%= receiver.name %> <<%= receiver.email %>></p>
+    <% end %>
+    <%= text_area_tag :to, placeholder: "To" %>
   </div>
 
   <div class="field">
