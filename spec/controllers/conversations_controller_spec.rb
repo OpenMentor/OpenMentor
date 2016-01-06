@@ -19,13 +19,20 @@ describe ConversationsController do
       @mentor = Factories::Mentor.create!
       @other_mentor = Factories::Mentor.create!
       @other_mentor2 = Factories::Mentor.create!
-      as_mentor(@mentor) do
-        get :new, receiver_ids: [@other_mentor.id, @other_mentor2.id]
-      end
     end
 
     it "assigns a receiver" do
-      expect(assigns(:receivers)).to eq([@other_mentor, @other_mentor2])
+      as_mentor(@mentor) do
+        get :new, receiver_ids: [@other_mentor.id, @other_mentor2.id]
+        expect(assigns(:receivers)).to eq([@other_mentor, @other_mentor2])
+      end
+    end
+
+    it "assigns an empty array if there are no receivers" do
+      as_mentor(@mentor) do
+        get :new, receiver_ids: []
+        expect(assigns(:receivers)).to eq([])
+      end
     end
   end
 

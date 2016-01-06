@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @receivers = Mentor.find(params[:receiver_ids])
+    @receivers = receivers
   end
 
   def create
@@ -21,5 +21,12 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
+  end
+
+  private
+
+  def receivers
+    receiver_ids = params[:receiver_ids] || []
+    Mentor.find(receiver_ids)
   end
 end
