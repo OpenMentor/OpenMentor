@@ -257,10 +257,14 @@ input, textarea {
   width: 100%;
 }
 
-::-webkit-input-placeholder { color: $subtext-gray; }
-:-moz-placeholder { color: $subtext-gray; }
-::-moz-placeholder { color: $subtext-gray; }
-:-ms-input-placeholder { color: $subtext-gray; }
+textarea {
+  min-height: 150px;
+}
+
+::-webkit-input-placeholder { color: $subtext-white; }
+:-moz-placeholder { color: $subtext-white; }
+::-moz-placeholder { color: $subtext-white; }
+:-ms-input-placeholder { color: $subtext-white; }
 
 .inline {
   display: inline-block;

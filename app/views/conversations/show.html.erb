@@ -4,7 +4,7 @@
 
   <% @conversation.mentors.each do |mentor| %>
     <% next if mentor == current_mentor %>
-    <%= link_to mentor_show_path(mentor) do %>
+    <%= link_to mentors_show_path(mentor) do %>
       <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
       <p><%= mentor.name %></p>
     <% end %>

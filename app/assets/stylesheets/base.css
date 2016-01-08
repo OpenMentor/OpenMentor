@@ -1,3 +1,14 @@
+p .to-mentor {
+  display: inline-block;
+  color: #222;
+  margin: 2px 5px;
+  max-width: 325px;
+  max-height: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction: ltr;
+  cursor: move; }
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -145,38 +156,6 @@ a.button, .button, input[type=submit] {
   padding: 1em 2em;
   text-align: center; }
 
-.navigation {
-  float: left;
-  list-style: none;
-  padding: 1.5em 0;
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%; }
-  @media (max-width: 750px) {
-    .navigation {
-      padding: 0; } }
-  .navigation li {
-    display: inline-block;
-    font-size: 0.9em;
-    font-weight: 500;
-    letter-spacing: 1px; }
-    @media (max-width: 750px) {
-      .navigation li {
-        padding: 0.6em 0;
-        width: 100%; } }
-  .navigation a {
-    margin: 0 2em; }
-    @media (max-width: 750px) {
-      .navigation a {
-        margin: 0; } }
-    .navigation a.current {
-      border-bottom: 2px solid #fff;
-      color: #fff; }
-      @media (max-width: 750px) {
-        .navigation a.current {
-          border-bottom: none; } }
-
 *:focus {
   outline: none; }
 
@@ -212,7 +191,7 @@ label {
 .field_with_errors {
   display: inline; }
 
-input {
+input, textarea {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.3);
   color: white;
@@ -225,17 +204,20 @@ input {
   padding: 0.6em 0.8em;
   width: 100%; }
 
+textarea {
+  min-height: 150px; }
+
 ::-webkit-input-placeholder {
-  color: #a3aaaf; }
+  color: rgba(255, 255, 255, 0.5); }
 
 :-moz-placeholder {
-  color: #a3aaaf; }
+  color: rgba(255, 255, 255, 0.5); }
 
 ::-moz-placeholder {
-  color: #a3aaaf; }
+  color: rgba(255, 255, 255, 0.5); }
 
 :-ms-input-placeholder {
-  color: #a3aaaf; }
+  color: rgba(255, 255, 255, 0.5); }
 
 .inline {
   display: inline-block; }

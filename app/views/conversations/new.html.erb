@@ -1,31 +1,34 @@
-<h1>New Conversation</h1>
+<%= render "layouts/header" %>
 
-<%= form_tag(conversations_create_path, method: :put) do %>
-  <%= hidden_field_tag "sender_id", current_mentor.id %>
+<div class="container">
+  <div class="form-container">
+    <h1>New Conversation</h1>
 
-  <% @receivers.each do |receiver| %>
-    <%= hidden_field_tag "receiver_ids[]", receiver.id %>
-  <% end %>
+    <%= form_tag(conversations_create_path, method: :put) do %>
+      <%= hidden_field_tag "sender_id", current_mentor.id %>
+
+      <% @receivers.each do |receiver| %>
+        <%= hidden_field_tag "receiver_ids[]", receiver.id %>
+      <% end %>
 
 
-  <div class="field">
-    <%= label_tag :to %>
-    <span>To:</span>
-    <% @receivers.each do |receiver| %>
-      <p class="to-mentor"><%= receiver.name %> <<%= receiver.email %>></p>
+      <div class="field">
+        <% @receivers.each do |receiver| %>
+          <label class="to-mentor">To: <%= receiver.name %> <<%= receiver.email %>></label>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :subject %>
+        <%= text_field_tag :subject, "", placeholder: "Subject" %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :body %>
+        <%= text_area_tag :body, "", placeholder: "The start of every new conversation is the start of a new journey..." %>
+      </div>
+
+      <%= submit_tag "Send", :class => "button fill" %>
     <% end %>
-    <%= text_area_tag :to, placeholder: "To" %>
   </div>
-
-  <div class="field">
-    <%= label_tag :subject %>
-    <%= text_field_tag :subject, "", placeholder: "Subject" %>
-  </div>
-
-  <div class="field">
-    <%= label_tag :body %>
-    <%= text_area_tag :body, "", placeholder: "The start of every new conversation is the start of a new journey..." %>
-  </div>
-
-  <%= submit_tag "Send" %>
-<% end %>
+</div>
