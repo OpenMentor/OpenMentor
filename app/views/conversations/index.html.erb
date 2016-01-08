@@ -7,7 +7,6 @@
     <div>
       <div class="inline">
         <% conversation.mentors.each do |mentor| %>
-          <% next if mentor == current_mentor %>
           <%= link_to mentors_show_path(mentor) do %>
             <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
           <% end %>
