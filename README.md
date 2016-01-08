@@ -56,6 +56,7 @@ This project uses `RSpec` for testing. To run tests:
 
 ```bash
 $ bundle
+$ bundle rake db:migrate db:test:prepare
 $ bundle exec rspec
 ```
 
