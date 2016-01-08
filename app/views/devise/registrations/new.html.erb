@@ -4,6 +4,7 @@
     <div class="form-inner">
       <a href="/"><img class="form-logo" src="/assets/om-mountain.png" src="Open Mentor Logo" /></a>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= hidden_field_tag :default_profile_picture, value: "default" %>
 
         <div class="field">
           <%= f.label :name %>
