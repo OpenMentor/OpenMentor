@@ -51,6 +51,7 @@ namespace :initialize do
           email: email,
           password: "password",
           time_zone: ActiveSupport::TimeZone.us_zones.sample.name,
+          profile_picture: open("app/assets/images/avatars/#{rand(23)}.png")
         )
       rescue ActiveRecord::RecordInvalid
       end
