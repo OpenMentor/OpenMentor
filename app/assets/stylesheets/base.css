@@ -98,6 +98,11 @@ em {
   .header .logged-in .mentor-name {
     color: white;
     margin-right: 1em; }
+.header .header-messages {
+  font-size: 1.3em;
+  display: inline-block;
+  margin-right: 0.7em;
+  vertical-align: middle; }
 
 a.button, .button, input[type=submit] {
   background: transparent;
