@@ -26,7 +26,7 @@ class Mentor < ActiveRecord::Base
   has_many :messages, foreign_key: "sender_id"
 
   # Paperclip settings
-  has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/avatars/3.png"
+  has_attached_file :profile_picture, styles: { medium: "300x300>", thumb: "95x95>" }, default_url: "/assets/avatars/#{rand(23)}.png"
   validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
 
   def self.search(search_string)
