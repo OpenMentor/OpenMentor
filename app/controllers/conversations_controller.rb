@@ -4,7 +4,10 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @receivers = receivers
+    # Require an explicit receiver for v1.
+    # Revisit so receivers can be added as part
+    # of new message creation.
+    render_404 unless receivers.any?
   end
 
   def create
@@ -27,6 +30,6 @@ class ConversationsController < ApplicationController
 
   def receivers
     receiver_ids = params[:receiver_ids] || []
-    Mentor.find(receiver_ids)
+    @receivers ||= Mentor.find(receiver_ids)
   end
 end

@@ -28,10 +28,9 @@ describe ConversationsController do
       end
     end
 
-    it "assigns an empty array if there are no receivers" do
+    it "returns a 404 if no receivers are specified" do
       as_mentor(@mentor) do
-        get :new, receiver_ids: []
-        expect(assigns(:receivers)).to eq([])
+        expect { get :new, receiver_ids: [] }.to raise_error(error_404)
       end
     end
   end
