@@ -13,23 +13,41 @@ As the great Phil Collins once said "In learning you will teach, and in teaching
 
 ### Contributing!
 
-A more formal contributing document is in the works, but for now, if you wish to participate in the development of Open Mentor
-we kindly ask you to create an issue in this repository expressing your desire. Someone in the Open Mentor organization will
-help you get started and identify a project or feature to work on as we prepare for the initial release. Please see the setup
-instructions below for configuring your development environment.
+We welcome any and all contributions! From documentation to feature work, fixing typos or enhancing existing functionality, all
+contributions are valuable.
+
+Please see this [list of issues](https://github.com/OpenMentor/OpenMentor/issues) for a complete list of possible contributions you can make.
 
 Please also note that we subscribe to [v1.3 of the contributor covenant](http://contributor-covenant.org/). We welcome all
-who wish to contribute to this project. We ask that every contributor behave in a respectful and humble way to all others,
+who wish to contribute to this project. We only ask that every contributor behave in a respectful and humble way to all others,
 regardless of category or identity. We take this very seriously and no exceptions for improper or disrespectful conduct
 will be tolerated. Prior to contributing you are kindly asked to read our
 [contributor covenant](https://github.com/OpenMentor/OpenMentor/blob/3e340701d0fd9fd9fb28c70e9612244f9179b164/CODE_OF_CONDUCT.md).
 
+To get started, create a fork of this repository and follow the setup instructions. If you run into issues installing any of the
+dependencies or you get stuck, feel free to open an issue, and someone will help unblock you.
+
+All proposed feature work should be adequately covered with tests. Submissions that do not provide adequate test coverage will be kindly
+asked to add test coverage before they will be merged. If you are new to testing but want to make contributions, please also feel free
+to open an issue to request pairing or help. We are happy to help those that are willing to learn while we work towards v1 of this application.
+
+### Contributing Steps
+
+1. Fork this repository
+2. Clone to your local development machine
+3. Add your feature / specs
+4. Push to your fork
+5. Open a Pull Request to the master branch of this repository
+
 ### Setup
 
-This project assumes you have PostGreSQL v9.4.5 installed along with [Mailcatcher](http://mailcatcher.me/).
-We also use Ruby v2.2.4-p173.
+1. Install dependencies
 
-An initialize file exists to seed your development database:
+- Ruby v2.2.4-p173
+- PostGreSQL v9.4.5 (on OSx you can install via [homebrew](http://brew.sh/))
+- [Mailcatcher](http://mailcatcher.me/)
+
+2. Setup your development database:
 
 ```bash
 $ bundle
@@ -37,14 +55,35 @@ $ bundle exec rake db:create db:migrate
 $ bundle exec rake initialize:all
 ```
 
-Once your development database is setup, you should be able to start your rails server and signup!
+3. Start Mailcatcher:
+
+Mailcatcher runs as a daemon process, but it needs to be started:
+
+`$ mailcatcher`
+
+If you installed the Mailcatcher gem correctly, the `mailcatcher` binary should already
+be installed and included in your Ruby path by default. Depending on the Ruby version manager
+you use problems can arise. If you are stuck, please feel free to open an issue and someone will
+help you debug the problem.
+
+3. Start the app:
 
 ```bash
 $ bundle exec rails s
 ```
 
+4. Verify your Rails server is running:
+
+Visit 'localhost:3000' in your browser of choice. Assuming everything is setup correctly so far, you should
+see the sign in form.
+
+If you are experiencing an issue that you cannot debug, please open an issue and include the error message
+and stack trace.
+
+5. Verify Mailcatcher is running:
+
 You'll have to make sure you have Mailcatcher running (it runs as a daemon in the background) before
-signing up. Assuming Mailcatcher is running, when you signup a confirmation email will be captured by
+signing up (`$ mailcatcher`). Assuming Mailcatcher is running, when you signup a confirmation email will be captured by
 Mailcatcher and viewable by visiting [http://localhost:1080/](http://localhost:1080/) in your browser.
 
 There you should see the confirmation email with the confirm link. Following that link should allow you
@@ -59,17 +98,6 @@ $ bundle
 $ bundle rake db:migrate db:test:prepare
 $ bundle exec rspec
 ```
-
-Any new feature of contribution added to this project is expected to have tests verifying
-the proper behavior.
-
-### Contributing Steps
-
-1. Fork this repository
-2. Clone to your local development machine
-3. Add your feature / specs
-4. Push to your fork
-5. Open a Pull Request to the master branch of this repository
 
 ### License
 
