@@ -41,13 +41,13 @@ to open an issue to request pairing or help. We are happy to help those that are
 
 ### Setup
 
-1. Install dependencies
+##### Install dependencies
 
 - Ruby v2.2.4-p173
 - PostGreSQL v9.4.5 (on OSx you can install via [homebrew](http://brew.sh/))
 - [Mailcatcher](http://mailcatcher.me/)
 
-2. Setup your development database:
+##### Setup your development database:
 
 ```bash
 $ bundle
@@ -55,7 +55,7 @@ $ bundle exec rake db:create db:migrate
 $ bundle exec rake initialize:all
 ```
 
-3. Start Mailcatcher:
+##### Start Mailcatcher:
 
 Mailcatcher runs as a daemon process, but it needs to be started:
 
@@ -66,13 +66,13 @@ be installed and included in your Ruby path by default. Depending on the Ruby ve
 you use problems can arise. If you are stuck, please feel free to open an issue and someone will
 help you debug the problem.
 
-3. Start the app:
+##### Start the app:
 
 ```bash
 $ bundle exec rails s
 ```
 
-4. Verify your Rails server is running:
+##### Verify your Rails server is running:
 
 Visit 'localhost:3000' in your browser of choice. Assuming everything is setup correctly so far, you should
 see the sign in form.
@@ -80,7 +80,7 @@ see the sign in form.
 If you are experiencing an issue that you cannot debug, please open an issue and include the error message
 and stack trace.
 
-5. Verify Mailcatcher is running:
+##### Verify Mailcatcher is running:
 
 You'll have to make sure you have Mailcatcher running (it runs as a daemon in the background) before
 signing up (`$ mailcatcher`). Assuming Mailcatcher is running, when you signup a confirmation email will be captured by
