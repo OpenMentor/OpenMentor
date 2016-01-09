@@ -6,16 +6,11 @@
 
     <%= form_tag(conversations_create_path, method: :put) do %>
       <%= hidden_field_tag "sender_id", current_mentor.id %>
-
-      <% @receivers.each do |receiver| %>
-        <%= hidden_field_tag "receiver_ids[]", receiver.id %>
-      <% end %>
+      <%= hidden_field_tag "receiver_id", @receiver.id %>
 
 
       <div class="field">
-        <% @receivers.each do |receiver| %>
-          <label class="to-mentor">To: <%= receiver.name %> <<%= receiver.email %>></label>
-        <% end %>
+        <label class="to-mentor">To: <%= @receiver.name %> <<%= @receiver.email %>></label>
       </div>
 
       <div class="field">

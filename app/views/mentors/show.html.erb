@@ -17,7 +17,7 @@
       <% end %>
     </div>
     <div class="container profile-bio">
-      <p><%= link_to('Message', conversations_new_path(receiver_ids: [@mentor.id]), class: "button x-small") %></p>
+      <p><%= link_to('Message', conversations_new_path(receiver_id: @mentor.id), class: "button x-small") %></p>
       <h4>Time Zone</h4>
       <p><%= @mentor.time_zone %></p>
       <h4>Availabilities</h4>
