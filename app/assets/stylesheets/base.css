@@ -104,65 +104,6 @@ em {
   margin-right: 0.7em;
   vertical-align: middle; }
 
-.conversations-row {
-  display: block;
-  background: #4077b5;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  margin-bottom: 1em;
-  padding: 1em; }
-  .conversations-row a {
-    color: #fff; }
-    .conversations-row a:hover {
-      color: rgba(255, 255, 255, 0.5); }
-  .conversations-row .mentor-photos {
-    display: inline-block; }
-    .conversations-row .mentor-photos a {
-      display: inline-block;
-      margin-right: 0.2em; }
-      .conversations-row .mentor-photos a:last-child {
-        margin: 0; }
-    @media (max-width: 700px) {
-      .conversations-row .mentor-photos {
-        text-align: center; } }
-  .conversations-row .mentor-image-container {
-    height: 20px;
-    width: 20px; }
-    .conversations-row .mentor-image-container img {
-      display: inline-block;
-      height: 20px; }
-  .conversations-row .message-subject,
-  .conversations-row .message-body,
-  .conversations-row .message-count {
-    display: inline-block;
-    margin: 0.5em 0; }
-  .conversations-row .mentor-photos {
-    margin: 0.35em 0;
-    width: 10%; }
-  .conversations-row .message-subject {
-    width: 20%; }
-  .conversations-row .message-body {
-    width: 50%; }
-  .conversations-row .message-count {
-    text-align: right;
-    width: 18%; }
-    @media (max-width: 700px) {
-      .conversations-row .message-count {
-        text-align: left; } }
-  .conversations-row .mentor-photos,
-  .conversations-row .message-subject,
-  .conversations-row .message-body,
-  .conversations-row .message-count {
-    vertical-align: top; }
-    @media (max-width: 700px) {
-      .conversations-row .mentor-photos,
-      .conversations-row .message-subject,
-      .conversations-row .message-body,
-      .conversations-row .message-count {
-        display: block;
-        width: 100%; } }
-
 a.button, .button, input[type=submit] {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -288,6 +229,14 @@ textarea {
 
 .center {
   text-align: center; }
+
+.inline-label {
+  color: rgba(255, 255, 255, 0.5); }
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 
 .wide-button {
   margin: 1em 0 2em 0;
@@ -616,6 +565,101 @@ textarea:focus {
 
 .unavailable {
   background-color: #4077b5; }
+
+.conversations-row {
+  display: block;
+  background: #4077b5;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  padding: 1em; }
+  .conversations-row a {
+    color: #fff; }
+    .conversations-row a:hover {
+      color: rgba(255, 255, 255, 0.5); }
+  .conversations-row .mentor-photos {
+    display: inline-block; }
+    .conversations-row .mentor-photos a {
+      display: inline-block;
+      margin-right: 0.2em; }
+      .conversations-row .mentor-photos a:last-child {
+        margin: 0; }
+    @media (max-width: 750px) {
+      .conversations-row .mentor-photos {
+        text-align: center; } }
+  .conversations-row .mentor-image-container {
+    height: 20px;
+    width: 20px; }
+    .conversations-row .mentor-image-container img {
+      display: inline-block;
+      height: 20px; }
+  .conversations-row .message-subject,
+  .conversations-row .message-body,
+  .conversations-row .message-count {
+    display: inline-block;
+    margin: 0.5em 0; }
+  .conversations-row .mentor-photos {
+    margin: 0.35em 0;
+    width: 10%; }
+  .conversations-row .message-subject {
+    width: 20%; }
+  .conversations-row .message-body {
+    width: 50%; }
+  .conversations-row .message-count {
+    text-align: right;
+    width: 18%; }
+    @media (max-width: 750px) {
+      .conversations-row .message-count {
+        text-align: left; } }
+  .conversations-row .mentor-photos,
+  .conversations-row .message-subject,
+  .conversations-row .message-body,
+  .conversations-row .message-count {
+    vertical-align: top; }
+    @media (max-width: 750px) {
+      .conversations-row .mentor-photos,
+      .conversations-row .message-subject,
+      .conversations-row .message-body,
+      .conversations-row .message-count {
+        display: block;
+        width: 100%; } }
+
+.message-container {
+  background: #4077b5;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 2.5em 2.5em 1.5em  2.5em; }
+  .message-container a {
+    color: #fff; }
+  @media (max-width: 750px) {
+    .message-container {
+      padding: 2.5em 2.5em 2em  2.5em; } }
+  .message-container .message-subject {
+    font-size: 1.3em;
+    margin-top: 2em; }
+  .message-container .message-body {
+    margin-bottom: 3.5em; }
+  .message-container .message-footer {
+    overflow: hidden; }
+    .message-container .message-footer .message-time {
+      color: rgba(255, 255, 255, 0.5);
+      float: left;
+      width: 50%; }
+      @media (max-width: 750px) {
+        .message-container .message-footer .message-time {
+          float: none;
+          width: 100%; } }
+    .message-container .message-footer .button {
+      float: right; }
+      @media (max-width: 750px) {
+        .message-container .message-footer .button {
+          float: none;
+          margin-bottom: 0.1em;
+          width: 100%; } }
 
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08); }

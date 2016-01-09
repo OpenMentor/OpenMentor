@@ -1,19 +1,24 @@
 <%= render "layouts/header" %>
 
 <div class="container">
-  <% @conversation.mentors.each do |mentor| %>
-    <% next if mentor == current_mentor %>
-    <%= link_to mentors_show_path(mentor) do %>
-      <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
-      <p><%= mentor.name %></p>
+  <div class="message-container">
+    <% @conversation.mentors.each do |mentor| %>
+      <% next if mentor == current_mentor %>
+      <a href="<%= mentors_show_path(mentor) %>">
+        <div class="mentor-image-container">
+          <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
+        </div>
+      </a>
+      <a href="<%= mentors_show_path(mentor) %>"><h3 class="message-sender center"><%= mentor.name %></h3></a>
     <% end %>
-  <% end %>
 
-  <h2><%= @conversation.subject %></h2>
-
-  <% @conversation.messages.order(created_at: :asc).each do |message| %>
-    <p>From: <%= message.mentor.name %></p>
-    <p>Sent at: <%= message.sent_at %></p>
-    <p><%= message.body %></p>
-  <% end %>
+    <% @conversation.messages.order(created_at: :asc).each do |message| %>
+      <h2 class="message-subject"><%= @conversation.subject %></h2>
+      <p class="message-body"><%= message.body %></p>
+      <div class="message-footer">
+        <p class="message-time">Sent on <%= message.sent_at %></p>
+        <a href="<%= mentors_show_path %>" class="button small">Reply</a>
+      </div>
+    <% end %>
+  </div>
 </div>
