@@ -104,6 +104,65 @@ em {
   margin-right: 0.7em;
   vertical-align: middle; }
 
+.conversations-row {
+  display: block;
+  background: #4077b5;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  padding: 1em; }
+  .conversations-row a {
+    color: #fff; }
+    .conversations-row a:hover {
+      color: rgba(255, 255, 255, 0.5); }
+  .conversations-row .mentor-photos {
+    display: inline-block; }
+    .conversations-row .mentor-photos a {
+      display: inline-block;
+      margin-right: 0.2em; }
+      .conversations-row .mentor-photos a:last-child {
+        margin: 0; }
+    @media (max-width: 700px) {
+      .conversations-row .mentor-photos {
+        text-align: center; } }
+  .conversations-row .mentor-image-container {
+    height: 20px;
+    width: 20px; }
+    .conversations-row .mentor-image-container img {
+      display: inline-block;
+      height: 20px; }
+  .conversations-row .message-subject,
+  .conversations-row .message-body,
+  .conversations-row .message-count {
+    display: inline-block;
+    margin: 0.5em 0; }
+  .conversations-row .mentor-photos {
+    margin: 0.35em 0;
+    width: 10%; }
+  .conversations-row .message-subject {
+    width: 20%; }
+  .conversations-row .message-body {
+    width: 50%; }
+  .conversations-row .message-count {
+    text-align: right;
+    width: 18%; }
+    @media (max-width: 700px) {
+      .conversations-row .message-count {
+        text-align: left; } }
+  .conversations-row .mentor-photos,
+  .conversations-row .message-subject,
+  .conversations-row .message-body,
+  .conversations-row .message-count {
+    vertical-align: top; }
+    @media (max-width: 700px) {
+      .conversations-row .mentor-photos,
+      .conversations-row .message-subject,
+      .conversations-row .message-body,
+      .conversations-row .message-count {
+        display: block;
+        width: 100%; } }
+
 a.button, .button, input[type=submit] {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.3);

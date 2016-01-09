@@ -135,6 +135,70 @@ em {
   }
 }
 
+.conversations-row {
+  display: block;
+  background: $soft-blue;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  padding: 1em;
+  a {
+    color: #fff;
+    &:hover {
+      color: $subtext-white;
+    }
+  }
+  .mentor-photos {
+    display: inline-block;
+    a {
+      display: inline-block;
+      margin-right: 0.2em;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    @media (max-width: 700px) {
+      text-align: center;
+    }
+  }
+  .mentor-image-container {
+    height: 20px;
+    width: 20px;
+    img {
+      display: inline-block;
+      height: 20px;
+    }
+  }
+  .message-subject,
+  .message-body,
+  .message-count {
+    display: inline-block;
+    margin: 0.5em 0;
+  }
+  .mentor-photos {
+    margin: 0.35em 0;
+    width: 10%;
+  }
+  .message-subject { width: 20%; }
+  .message-body { width: 50%; }
+  .message-count {
+    text-align: right;
+    width: 18%;
+    @media (max-width: 700px) { text-align: left; }
+  }
+  .mentor-photos,
+  .message-subject,
+  .message-body,
+  .message-count {
+    vertical-align: top;
+    @media (max-width: 700px) {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
 // Modules
 a.button, .button, input[type=submit] {
   background: transparent;

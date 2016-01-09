@@ -1,7 +1,6 @@
 <%= render "layouts/header" %>
 
 <div class="container">
-
   <% @conversation.mentors.each do |mentor| %>
     <% next if mentor == current_mentor %>
     <%= link_to mentors_show_path(mentor) do %>

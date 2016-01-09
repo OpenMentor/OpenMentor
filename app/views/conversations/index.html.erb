@@ -3,22 +3,27 @@
 <div class="container">
   <h1>Conversations</h1>
 
-  <% @conversations.each do |conversation| %>
-    <div>
-      <div class="inline">
-        <% conversation.mentors.each do |mentor| %>
-          <%= link_to mentors_show_path(mentor) do %>
-            <%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %>
+  <div class="conversations-container">
+    <% @conversations.each do |conversation| %>
+      <div class="conversations-row">
+        <div class="mentor-photos">
+          <% conversation.mentors.each do |mentor| %>
+            <a href="<%= mentors_show_path(mentor) %>">
+              <div class="mentor-image-container"><%= image_tag mentor.profile_picture.url(:thumb), class: "mentor-photo inline" %></div>
+            </a>
           <% end %>
-        <% end %>
-      </div>
-      <%= link_to conversations_show_path(conversation) do %>
-        <div class="inline">
-          <h3><%= conversation.subject %></h3>
-          <p><%= conversation.messages.order(created_at: :desc).first.body.truncate(60) %></p>
-          <p><%= pluralize(conversation.messages.count, 'message') %></p>
         </div>
-      <% end %>
-    </div>
-  <% end %>
+        <a href="<%= conversations_show_path(conversation) %>">
+          <span class="message-subject"><%= conversation.subject %></span>
+        </a>
+        <a href="<%= conversations_show_path(conversation) %>">
+          <span class="message-body"><%= conversation.messages.order(created_at: :desc).first.body.truncate(60) %></span>
+        </a>
+        <a href="<%= conversations_show_path(conversation) %>">
+          <span class="message-count"><%= pluralize(conversation.messages.count, 'message') %></span>
+        </a>
+      </div>
+    <% end %>
+  </div>
+
 </div>
