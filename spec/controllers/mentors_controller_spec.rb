@@ -47,8 +47,9 @@ describe MentorsController do
       before do
         @name = "New Name"
         @about = "New About"
+        @time_zone = "Hawaii"
         as_mentor(mentor) do
-          patch :update, mentor: { name: @name, about: @about, profile_picture: @profile_picture }
+          patch :update, mentor: { name: @name, about: @about, profile_picture: @profile_picture, time_zone: @time_zone }
         end
       end
 
@@ -59,6 +60,7 @@ describe MentorsController do
       it "updates the mentor" do
         expect(mentor.reload.name).to eq(@name)
         expect(mentor.about).to eq(@about)
+        expect(mentor.time_zone).to eq(@time_zone)
       end
 
       it "redirects back to the mentor show page" do
