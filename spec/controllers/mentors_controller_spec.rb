@@ -46,8 +46,9 @@ describe MentorsController do
     context "successful update" do
       before do
         @name = "New Name"
+        @about = "New About"
         as_mentor(mentor) do
-          patch :update, mentor: { name: @name }
+          patch :update, mentor: { name: @name, about: @about, profile_picture: @profile_picture }
         end
       end
 
@@ -57,6 +58,7 @@ describe MentorsController do
 
       it "updates the mentor" do
         expect(mentor.reload.name).to eq(@name)
+        expect(mentor.about).to eq(@about)
       end
 
       it "redirects back to the mentor show page" do

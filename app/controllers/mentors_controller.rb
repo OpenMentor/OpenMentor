@@ -40,6 +40,6 @@ class MentorsController < ApplicationController
   def member_params
     params.
       require(:mentor).
-      permit(:name, :profile_picture, :time_zone)
+      permit(:name, :profile_picture, :time_zone, :about)
   end
 end
