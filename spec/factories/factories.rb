@@ -1,5 +1,7 @@
 require 'factories/availability'
+require 'factories/conversation'
 require 'factories/mentor'
+require 'factories/mentor_skill'
+require 'factories/message'
 require 'factories/skill'
 require 'factories/skill_proposal'
-require 'factories/mentor_skill'
