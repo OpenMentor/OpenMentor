@@ -38,4 +38,5 @@ Rails.application.routes.draw do
   get 'conversations/new' => 'conversations#new', as: :conversations_new
   get 'conversations/:id' => 'conversations#show', as: :conversations_show
   put 'conversations/create' => 'conversations#create', as: :conversations_create
+  patch 'conversations/reply' => 'conversations#reply', as: :conversations_reply
 end
