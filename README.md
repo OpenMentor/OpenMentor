@@ -5,7 +5,7 @@ help others learn and grow. It's no secret that many grow and advance with the h
 in the form of mentorship throughout life. Yet, the world is not fair, and not all of us are lucky enough
 to grow up surrounded by those experienced in various skills or abilities.
 
-Open Mentors recognizes that technology can help offset the inequality of opportunity by allowing individuals of various backgrounds
+Open Mentor recognizes that technology can help offset the inequality of opportunity by allowing individuals of various backgrounds
 a place to connect and engage. Learn together today and grow together tomorrow.
 
 We invite anyone interested in participating in this community to always consider themselves a mentor and a mentee.
