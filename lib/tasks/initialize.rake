@@ -51,7 +51,8 @@ namespace :initialize do
           email: email,
           password: "password",
           time_zone: ActiveSupport::TimeZone.us_zones.sample.name,
-          profile_picture: open("app/assets/images/avatars/#{rand(23)}.png")
+          profile_picture: open("app/assets/images/avatars/#{rand(23)}.png"),
+          about: "This is an initialized profile. Information specific to this mentor should be described here."
         )
       rescue ActiveRecord::RecordInvalid
       end
