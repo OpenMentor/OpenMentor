@@ -9,7 +9,7 @@ module Conversations
     validates_after message: { presence: true }
 
     def call
-      context.message = Message.create(
+      context.message = Message.create!(
         sender_id: context.sender.id,
         conversation: context.conversation,
         body: context.body,
