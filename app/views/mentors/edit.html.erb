@@ -22,6 +22,11 @@
         </div>
       </div>
 
+      <div class="field">
+        <%= f.label :about, "About" %>
+        <%= f.text_area :about, value: @mentor.about %>
+      </div>
+
       <div class="actions">
         <%= f.submit "Update", :class => "fill" %>
       </div>
