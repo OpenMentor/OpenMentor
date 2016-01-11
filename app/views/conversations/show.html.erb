@@ -12,12 +12,25 @@
       <a href="<%= mentors_show_path(mentor) %>"><h3 class="message-sender center"><%= mentor.name %></h3></a>
     <% end %>
 
-    <% @conversation.messages.order(created_at: :asc).each do |message| %>
+    <%= form_tag conversations_reply_path, method: :patch do |f| %>
+      <%= hidden_field_tag :conversation_id, @conversation.id %>
+      <%= hidden_field_tag :message_id, @conversation.most_recent_order.first.id %>
+
+      <div class="field">
+        <%= label_tag :reply %>
+        <%= text_area_tag :body, "", placeholder: "Your reply..." %>
+      </div>
+
+      <div class="actions">
+        <%= submit_tag "Reply", :class => "fill" %>
+      </div>
+    <% end %>
+
+    <% @conversation.most_recent_order.each do |message| %>
       <h2 class="message-subject"><%= @conversation.subject %></h2>
       <p class="message-body"><%= message.body %></p>
       <div class="message-footer">
         <p class="message-time">Sent on <%= message.sent_at %></p>
-        <a href="<%= mentors_show_path %>" class="button small">Reply</a>
       </div>
     <% end %>
   </div>
