@@ -5,6 +5,7 @@ class CreateMessages < ActiveRecord::Migration
       t.text :body, null: false
       t.datetime :sent_at, null: false
       t.belongs_to :conversation
+      t.datetime :read_at, default: nil
 
       t.timestamps null: false
     end

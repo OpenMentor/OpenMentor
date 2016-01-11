@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160104030005) do
   create_table "mentors", force: :cascade do |t|
     t.string   "name",                                         null: false
     t.string   "email",                                        null: false
+    t.text     "about"
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.string   "encrypted_password",           default: "",    null: false
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160104030005) do
     t.text     "body",            null: false
     t.datetime "sent_at",         null: false
     t.integer  "conversation_id"
+    t.datetime "read_at"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
