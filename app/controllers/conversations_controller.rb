@@ -10,6 +10,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
+    # TODO: Error handling around conversation / message creation
     conversation.save
     message.save
     flash[:notice] = "Your message delivered successfully"
