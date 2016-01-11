@@ -16,8 +16,8 @@ module Conversations
     def conversation
       Conversation.
         joins(:conversations_mentors).
-        where(:conversations => { id: context.conversation_id },
-              :conversations_mentors => { :mentor_id => context.sender.id }).
+        where(conversations: { id: context.conversation_id },
+              conversations_mentors: { :mentor_id => context.sender.id }).
         first
     end
   end
