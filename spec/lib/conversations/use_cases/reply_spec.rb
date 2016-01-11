@@ -10,8 +10,8 @@ describe Conversations::Reply do
   let(:unknown_mentor) { Factories::Mentor.create! }
   let(:body) { "Reply body" }
   let(:message1) { Factories::Message.create!(sender: mentor1, receiver: mentor2, conversation: conversation, body: body) }
-  let(:success_params) { { id: conversation.id.to_s, current_mentor: mentor2, message_id: message1.id.to_s, body: body } }
-  let(:error_params) { { id: conversation.id.to_s, current_mentor: unknown_mentor, message_id: message1.id.to_s, body: body } }
+  let(:success_params) { { conversation_id: conversation.id.to_s, current_mentor: mentor2, message_id: message1.id.to_s, body: body } }
+  let(:error_params) { { conversation_id: conversation.id.to_s, current_mentor: unknown_mentor, message_id: message1.id.to_s, body: body } }
 
   context "success" do
     before do

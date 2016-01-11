@@ -6,14 +6,13 @@ module Conversations
   class Reply
     include ActionLogic::ActionUseCase
 
-    validates_before id: { type: :string, presence: ->(id) { !id.empty? } },
+    validates_before conversation_id: { type: :string, presence: ->(conversation_id) { !conversation_id.empty? } },
                      current_mentor: { type: :mentor, presence: true },
-                     message_id: { type: :string, presence: ->(id) { !id.empty? } },
+                     message_id: { type: :string, presence: ->(message_id) { !message_id.empty? } },
                      body: { type: :string, presence: ->(body) { !body.empty? } }
 
     def call
       context.sender = context.current_mentor
-      context.conversation_id = context.id
     end
 
     def tasks
