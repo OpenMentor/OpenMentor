@@ -35,7 +35,7 @@ class ConversationsController < ApplicationController
   private
 
   def reply_params
-    params.require(:conversation).permit(:id, :message_id, :body).merge(current_mentor: current_mentor)
+    params.permit(:conversation_id, :message_id, :body).merge(current_mentor: current_mentor)
   end
 
   def receiver

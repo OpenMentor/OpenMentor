@@ -75,7 +75,7 @@ describe ConversationsController do
         @body = "Reply body"
 
         as_mentor(@mentor1) do
-          patch :reply, conversation: { id: @conversation.id, message_id: @message1.id, body: @body }
+          patch :reply, conversation_id: @conversation.id, message_id: @message1.id, body: @body
         end
 
         @conversation.reload
